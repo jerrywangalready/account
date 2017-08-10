@@ -25,6 +25,15 @@ public class ChartController {
         return "/chart/chartInit";
     }
 
+    /**
+     * @Description 获取版本信息
+     * @author JerryWang
+     * @date 2017/8/10 14:49
+     * @param objectCode
+     * @param startDate
+     * @param finishDate
+     * @return
+     */
     @RequestMapping("/getVersion")
     public @ResponseBody List<Map<String, String>> getVersion(String objectCode, String startDate, String finishDate){
         return chartService.getVersion(objectCode, startDate, finishDate);
