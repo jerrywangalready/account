@@ -3,7 +3,7 @@ package com.sgcc.comm.util.service;
 import com.sgcc.comm.model.LoginInfo;
 import com.sgcc.comm.util.CommUtil;
 import com.sgcc.comm.util.dao.CommDao;
-import com.sgcc.pesticide.login.model.UserToken;
+import com.sgcc.account.login.model.UserToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;

@@ -51,7 +51,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.removeDialogTabs = 'image:advanced;link:advanced';
 
     config.extraPlugins = 'uploadimage,image2';
-    // config.filebrowserImageUploadUrl = '/Users/jerrywang/code/apphome/pesticide/upload'
+    // config.filebrowserImageUploadUrl = '/Users/jerrywang/code/apphome/account/upload'
     //
-    config.uploadUrl = '/pesticide/image/uploadImage.do?command=QuickUpload&type=Files&responseType=json';
+    config.uploadUrl = '/account/image/uploadImage.do?command=QuickUpload&type=Files&responseType=json';
 };

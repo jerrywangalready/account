@@ -1,4 +1,4 @@
-<%@ page import="com.sgcc.pesticide.login.model.UserToken" %><%--
+<%@ page import="com.sgcc.account.login.model.UserToken" %><%--
   Created by IntelliJ IDEA.
   User: jerrywang
   Date: 2017/1/15

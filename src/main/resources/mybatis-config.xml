@@ -9,9 +9,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     </settings>
         <!-- 命名空间 -->
     <typeAliases>
-        <package name="com.sgcc.pesticide.login.model"></package>
-        <package name="com.sgcc.pesticide.settings.model"></package>
-        <package name="com.sgcc.pesticide.demo.model"></package>
+        <package name="com.sgcc.account.login.model"></package>
+        <package name="com.sgcc.account.settings.model"></package>
+        <package name="com.sgcc.account.demo.model"></package>
     </typeAliases>
 
     <!--

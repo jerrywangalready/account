@@ -88,7 +88,7 @@ public class ImageUploadUtil {
                         // 重命名上传后的文件名 111112323.jpg
                         fileName = "oooooo" + suffix;
                         // 定义上传路径 .../upload/111112323.jpg
-                        File uploadFile = new File("Users/jerrywang/code/apphome/pesticide/upload/" + fileName);
+                        File uploadFile = new File("Users/jerrywang/code/apphome/account/upload/" + fileName);
 //                        File uploadFile = new File(realPathDirectory + "\\" + fileName);
                         file.transferTo(uploadFile);
                     }

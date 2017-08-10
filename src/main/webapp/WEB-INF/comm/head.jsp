@@ -1,4 +1,4 @@
-<%@ page import="com.sgcc.pesticide.login.model.UserToken" %><%--
+<%@ page import="com.sgcc.account.login.model.UserToken" %><%--
   Created by IntelliJ IDEA.
   User: jerrywang
   Date: 2017/1/15
@@ -11,10 +11,10 @@
     UserToken userToken = (UserToken) request.getSession().getAttribute("userToken");
 %>
 <link href="<%=path%>/comm/image/logo_mini_32.ico" rel="shortcut icon" />
-<link rel="stylesheet" type="text/css" href="<%=path%>/pesticide/index/css/index.css" />
-<link rel="stylesheet" type="text/css" href="<%=path%>/pesticide/index/css/_style.css" />
-<link rel="stylesheet" type="text/css" href="<%=path%>/pesticide/index/css/_mobile.css" />
-<link rel="stylesheet" type="text/css" href="<%=path%>/pesticide/index/css/primary-blue.css" />
+<link rel="stylesheet" type="text/css" href="<%=path%>/account/index/css/index.css" />
+<link rel="stylesheet" type="text/css" href="<%=path%>/account/index/css/_style.css" />
+<link rel="stylesheet" type="text/css" href="<%=path%>/account/index/css/_mobile.css" />
+<link rel="stylesheet" type="text/css" href="<%=path%>/account/index/css/primary-blue.css" />
 <link rel="stylesheet" type="text/css" href="<%=path%>/comm/plugins/bootstrap/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="<%=path%>/comm/plugins/bootstrap-fileinput-master/css/fileinput.min.css" />
 <%--<link rel="stylesheet" type="text/css" href="<%=path%>/comm/plugins/bootstrap-fileinput-master/css/fileinput-rtl.min.css" />--%>
@@ -23,11 +23,11 @@
 <link rel="stylesheet" type="text/css" href="<%=path%>/comm/plugins/jquery-ui-1.12.1.custom/jquery-ui.css" />
 <script type="text/javascript" src="<%=path%>/comm/plugins/jQuery/jquery-3.1.1.min.js"></script>
 <!--[if lt IE 9]>
-<link rel="stylesheet" href="<%=path%>/pesticide/index/css/IE.css"/>
+<link rel="stylesheet" href="<%=path%>/account/index/css/IE.css"/>
 <script src="http//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <!--[if lte IE 8]>
-<script type="text/javascript" src="<%=path%>/pesticide/index/js/IE.js"></script>
+<script type="text/javascript" src="<%=path%>/account/index/js/IE.js"></script>
 <![endif]-->
 <!-- 外部插件 -->
 <script type="text/javascript" src="<%=path%>/comm/plugins/bootstrap/js/bootstrap.min.js"></script>

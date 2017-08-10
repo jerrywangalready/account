@@ -1,6 +1,6 @@
 package com.sgcc.comm.interceptor;
 
-import com.sgcc.pesticide.login.model.UserToken;
+import com.sgcc.account.login.model.UserToken;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 

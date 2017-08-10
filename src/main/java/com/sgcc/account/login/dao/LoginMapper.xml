@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sgcc.account.login.dao.LoginDao">
+
+    <select id="checkUser" parameterType="java.util.Map" resultType="UserToken">
+        SELECT username,nickname FROM s_users WHERE username = #{username} AND password = #{password} AND ISENABLE = '1'
+    </select>
+
+</mapper>

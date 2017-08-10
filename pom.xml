@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.sgcc.pesticide</groupId>
-    <artifactId>pesticide</artifactId>
+    <groupId>com.sgcc.account</groupId>
+    <artifactId>account</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>pesticide Maven Webapp</name>
+    <name>account Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <!-- 集中定义公用的依赖版本号 -->
@@ -74,7 +74,7 @@
         <!--插件版本变量 end-->
 
         <!--其他变量 start-->
-        <war-name.version>pesticide</war-name.version>
+        <war-name.version>account</war-name.version>
         <jdk.version>1.7</jdk.version>
 
         <tomcat-port.version>8080</tomcat-port.version>
@@ -408,7 +408,7 @@
 
     <!--设置项目编译级别等设置 start-->
     <build>
-        <finalName>pesticide</finalName>
+        <finalName>account</finalName>
         <resources>
             <!--表示把java目录下的有关xml文件,properties文件编译/打包的时候放在resource目录下-->
             <resource>

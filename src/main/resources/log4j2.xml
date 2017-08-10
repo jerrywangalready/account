@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN" >
     <properties>
-        <property name="LOG_HOME">/Users/jerrywang/code/apphome/pesticide/logs</property>
+        <property name="LOG_HOME">/Users/jerrywang/code/apphome/account/logs</property>
     </properties>
 
     <Appenders>
