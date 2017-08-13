@@ -91,7 +91,7 @@ index.js.init = function(){
         }
     });
 
-    index.js.bell();
+
 };
 // 退出
 index.js.logout = function(){
