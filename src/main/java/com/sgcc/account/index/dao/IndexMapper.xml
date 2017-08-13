@@ -9,11 +9,11 @@
     </update>
 
     <select id="getObjectsByUser" resultType="java.util.Map" parameterType="String">
-        SELECT SOU.OBJECT_CODE,SO.OBJECT_NAME
-          FROM S_OBJECT_USERS SOU
-     LEFT JOIN S_OBJECT SO
-            ON SOU.OBJECT_CODE = SO.OBJECT_CODE
-         WHERE SOU.USERNAME = #{USERNAME}
+        SELECT ai.card_id,ci.card_name
+          FROM account_info ai
+     LEFT JOIN card_info ci
+            ON ai.card_id = ci.card_id
+         WHERE ai.user_id = #{USERNAME}
     </select>
     <select id="countNew" resultType="java.lang.String">
         SELECT

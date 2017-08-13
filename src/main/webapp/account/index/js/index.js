@@ -83,9 +83,9 @@ index.js.init = function(){
             $(".modal-body").html("");
             for (var i = 0; i < data.length; i++) {
                 if (i == 0) {
-                    $("a[name=a_object]").text(data[i].OBJECT_NAME).attr("value", data[i].OBJECT_CODE);
+                    $("a[name=a_object]").text(data[i].card_name).attr("value", data[i].card_id);
                 }
-                $(".modal-body").append("<div class='modal-item'><span value='" + data[i].OBJECT_CODE + "'>" + data[i].OBJECT_NAME + "</span></div>")
+                $(".modal-body").append("<div class='modal-item'><span value='" + data[i].card_id + "'>" + data[i].card_name + "</span></div>")
 
             }
         }
@@ -102,54 +102,4 @@ index.js.logout = function(){
     });
 };
 
-// 铃铛
-index.js.bell = function () {
-    setInterval(function () {
-        var obj = getParameter(location.hash, "obj", "");
-        var dt = $("a[name=bell]").attr("dt");
-        $.post(path + "/index/countNew.do",{obj:obj, dt:dt},function(data){
-            if(data > 0){
-                $("#warn-bell").addClass("icon-animated-bell");
-            }else {
-                $("#warn-bell").removeClass("icon-animated-bell");
-            }
-            $("#warn-bell").next().text(data);
-        });
-    },5*60*1000);
-};
-
-index.js.bellClick = function () {
-    var param = {};
-    param.obj = getParameter(location.hash, "obj", "");
-    param.dt = $("a[name=bell]").attr("dt");
-    var ran = Math.random()*100000000000000000;
-    // $.ajax({
-    //     type:'POST',
-    //     async:false,
-    //     url:path+'/index/getNew.do',
-    //     contentType:'application/json',
-    //     data:JSON.stringify(param),
-    //     success:function (data) {
-    //         // 给铃铛赋值新时间
-    //         $("a[name=bell]").attr("dt", data.dt);
-    //         //
-    //         var on = getParameter(location.hash, "on", "");
-    //         if("workbench/init" != on) {
-                setHash("on=workbench/init&obj=" + param.obj +"&ran="+ran);
-    //         }else{
-    //             var html = template('grid_template',{'list':data.query,'source':'bell'});
-    //             $("#grid").prepend(html);
-    //             $(".grid-item").slideDown('normal');
-    //             // 初始化页码按钮
-    //             var page = {};
-    //             page.total = 0;
-    //             page.pageNum = 0;
-    //             page.pageSize = 0;
-    //             $("#page-bar").page({total});
-    //         }
-            $("#warn-bell").removeClass("icon-animated-bell").next().text("0");
-    //     }
-    //
-    // });
-};
 

@@ -37,7 +37,6 @@ create table account_info
 (
    uuid                 varchar(32) comment '主键',
    user_id              varchar(32) comment '账户人ID',
-   user_name            varchar(32) comment '账户人姓名',
    card_id              varchar(32) comment '所在餐卡ID',
    balance              decimal comment '余额'
 );
