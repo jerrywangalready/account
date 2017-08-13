@@ -49,10 +49,6 @@
             <div class="one_half">
                 <div class="sidebar-widget">
                     <ul class="social_icons">
-                        <li style="width:45px;" onclick="index.js.bellClick()"><span id="warn-bell" style="float:left;margin:2px 2px;" class="glyphicon glyphicon-bell"></span> <a name="bell" href="javascript:void(0);">0</a></li>
-                        <li><span class="glyphicon glyphicon-book"></span>
-                            <a name="a_object" href="javascript:void(0);" class="" data-toggle="modal" data-target="#Object_Modal"></a>
-                        </li>
                         <li><span class="glyphicon glyphicon-user"></span> <a name="a_name" href="javascript:void(0);" class=""></a></li>
                         <li><span class="glyphicon glyphicon-log-out"></span> <a href="javascript:void(0);" class="" onclick="index.js.logout()">退出</a></li>
                     </ul>
