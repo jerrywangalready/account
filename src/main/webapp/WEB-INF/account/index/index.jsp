@@ -29,6 +29,9 @@
             <div class="one_half">
                 <div class="sidebar-widget">
                     <ul class="social_icons">
+                        <li><span class="glyphicon glyphicon-book"></span>
+                            <a name="a_object" href="javascript:void(0);" class="" data-toggle="modal" data-target="#Object_Modal"></a>
+                        </li>
                         <li><span class="glyphicon glyphicon-user"></span> <a name="a_name" href="javascript:void(0);" class=""></a></li>
                         <li><span class="glyphicon glyphicon-log-out"></span> <a href="javascript:void(0);" class="" onclick="index.js.logout()">退出</a></li>
                     </ul>
@@ -49,6 +52,9 @@
             <div class="one_half">
                 <div class="sidebar-widget">
                     <ul class="social_icons">
+                        <li><span class="glyphicon glyphicon-book"></span>
+                            <a name="a_object" href="javascript:void(0);" class="" data-toggle="modal" data-target="#Object_Modal"></a>
+                        </li>
                         <li><span class="glyphicon glyphicon-user"></span> <a name="a_name" href="javascript:void(0);" class=""></a></li>
                         <li><span class="glyphicon glyphicon-log-out"></span> <a href="javascript:void(0);" class="" onclick="index.js.logout()">退出</a></li>
                     </ul>
