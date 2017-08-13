@@ -21,7 +21,7 @@
                     <ul class="custom-menu">
                         <li class="current-menu-item"><a href="javascript:void(0);" onclick="index.js.menuClick('index/init')">首页</a></li>
                         <li><a href="javascript:void(0);" onclick="index.js.menuClick('statistics/init')">餐费统计</a></li>
-                        <li name="settings_li" style="display:none;"><a href="javascript:void(0);" onclick="index.js.menuClick('settings/users')">设置</a></li>
+                        <li name="settings_li" style="display:none;"><a href="javascript:void(0);" onclick="index.js.menuClick('settings/users')">设置1</a></li>
                     </ul>
                 </div>
             </div>
