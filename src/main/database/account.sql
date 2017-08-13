@@ -39,7 +39,7 @@ create table account_info
    user_id              varchar(32) comment '账户人ID',
    user_name            varchar(32) comment '账户人姓名',
    card_id              varchar(32) comment '所在餐卡ID',
-   balance              number(6) comment '余额'
+   balance              decimal comment '余额'
 );
 
 alter table account_info comment '账户信息';
@@ -65,9 +65,9 @@ create table consume_record
 (
    uuid                 varchar(32) not null comment '主键',
    user_id              varchar(32) comment '用户账号',
-   breakfast            number(6,2) comment '早餐',
-   lunch                number(6,2) comment '午餐',
-   dinner               number(6,2) comment '晚餐',
+   breakfast            DECIMAL comment '早餐',
+   lunch                decimal comment '午餐',
+   dinner               decimal comment '晚餐',
    other                varchar(32) comment '其他',
    recordtime           date comment '记录日期',
    updatetime           datetime comment '时间戳',
@@ -163,7 +163,7 @@ create table recharge_record
    uuid                 varchar(32) comment '主键',
    user_id              varchar(32) comment '用户ID',
    card_id              varchar(32) comment '餐卡ID',
-   recharge_money       number(6,2) comment '充值金额',
+   recharge_money       decimal comment '充值金额',
    recharge_time        datetime comment '充值时间'
 );
 
