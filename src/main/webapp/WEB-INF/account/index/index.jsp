@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="../../comm/head.jsp"%>
@@ -18,14 +19,8 @@
             <div class="one_half">
                 <div class="sidebar-widget">
                     <ul class="custom-menu">
-                        <li class="current-menu-item"><a href="javascript:void(0);" onclick="index.js.menuClick('workbench/init')">工作台</a></li>
-                        <li><a href="javascript:void(0);" onclick="index.js.menuClick('creation/init')">创建</a></li>
-                        <li id="li_task_pool"><a class="shake shake-horizontal" href="javascript:void(0);" onclick="index.js.menuClick('issuePool/init')">任务池</a></li>
-                        <li><a href="javascript:void(0);" onclick="index.js.menuClick('push/init')">送测</a></li>
-                        <li><a href="javascript:void(0);" onclick="index.js.menuClick('launch/init')">上线</a></li>
-                        <li><a href="javascript:void(0);" onclick="index.js.menuClick('chart/init')">图表</a></li>
-                        <%--<li><a href="javascript:void(0);" onclick="index.js.menuClick('demo/init')">Demo</a></li>--%>
-                        <%--<li><a href="javascript:void(0);" onclick="index.js.menuClick('demo2/init')">Demo2</a></li>--%>
+                        <li class="current-menu-item"><a href="javascript:void(0);" onclick="index.js.menuClick('index/init')">首页</a></li>
+                        <li><a href="javascript:void(0);" onclick="index.js.menuClick('statistics/init')">餐费统计</a></li>
                         <li name="settings_li" style="display:none;"><a href="javascript:void(0);" onclick="index.js.menuClick('settings/users')">设置</a></li>
                     </ul>
                 </div>
@@ -34,10 +29,6 @@
             <div class="one_half">
                 <div class="sidebar-widget">
                     <ul class="social_icons">
-                        <li><span style="float:left;margin:2px 2px;" class="glyphicon glyphicon-bell"></span> <a name="bell" href="javascript:void(0);"></a></li>
-                        <li><span class="glyphicon glyphicon-book"></span>
-                            <a name="a_object" href="javascript:void(0);" class="" data-toggle="modal" data-target="#Object_Modal"></a>
-                        </li>
                         <li><span class="glyphicon glyphicon-user"></span> <a name="a_name" href="javascript:void(0);" class=""></a></li>
                         <li><span class="glyphicon glyphicon-log-out"></span> <a href="javascript:void(0);" class="" onclick="index.js.logout()">退出</a></li>
                     </ul>
@@ -90,14 +81,8 @@
             <!-- START Main Navigation -->
             <nav>
                 <ul id="menu_bar">
-                    <li class="current-menu-item"><a href="javascript:void(0);" onclick="index.js.menuClick('workbench/init')">工作台</a></li>
-                    <li><a href="javascript:void(0);" onclick="index.js.menuClick('creation/init')">创建</a></li>
-                    <li><a id="menu_task_pool" href="javascript:void(0);" onclick="index.js.menuClick('issuePool/init')">任务池</a></li>
-                    <li><a href="javascript:void(0);" onclick="index.js.menuClick('push/init')">送测</a></li>
-                    <li><a href="javascript:void(0);" onclick="index.js.menuClick('launch/init')">上线</a></li>
-                    <li><a href="javascript:void(0);" onclick="index.js.menuClick('chart/init')">图表</a></li>
-                    <%--<li><a href="javascript:void(0);" onclick="index.js.menuClick('demo/init')">Demo</a></li>--%>
-                    <%--<li><a href="javascript:void(0);" onclick="index.js.menuClick('demo2/init')">Demo2</a></li>--%>
+                    <li class="current-menu-item"><a href="javascript:void(0);" onclick="index.js.menuClick('index/init')">首页</a></li>
+                    <li><a href="javascript:void(0);" onclick="index.js.menuClick('statistics/init')">餐费统计</a></li>
                     <li name="settings_li" style="display:none;"><a href="javascript:void(0);" onclick="index.js.menuClick('settings/users')">设置</a></li>
                     <%--<li><a href="javascript:void(0);" onclick="index.js.menuClick('image/init')">图</a></li>--%>
                     <%--<li><a href="javascript:void(0);" onclick="index.js.menuClick('demo/init')">Demo</a></li>--%>
