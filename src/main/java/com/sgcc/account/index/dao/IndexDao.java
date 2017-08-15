@@ -1,5 +1,7 @@
 package com.sgcc.account.index.dao;
 
+import com.sgcc.account.index.model.ConsumeRecord;
+
 import java.util.List;
 import java.util.Map;
 
@@ -43,4 +45,50 @@ public interface IndexDao {
      * @param param
      */
     void updateDisplayStateByUser(Map<String, String> param);
+
+    /**
+     * @Description 新增消费详情
+     * @author JerryWang
+     * @date 2017/8/13 20:42
+     * @param param
+     * @return
+     */
+    void add(ConsumeRecord param);
+
+    /**
+     * @Description 修改消费详情
+     * @author JerryWang
+     * @date 2017/8/13 20:43
+     * @param param
+     */
+    void upd(ConsumeRecord param);
+
+    /**
+     * @Description 获取余额信息
+     * @author JerryWang
+     * @date 2017/8/14 15:21
+     * @param param
+     * @return
+     */
+    Float getBalance(Map<String, String> param);
+
+    /**
+     * @Description 获取今日记账信息
+     * @author JerryWang
+     * @date 2017/8/14 15:28
+     * @param param
+     * @return
+     */
+    Map<String,String> getAccountInfo(Map<String, String> param);
+
+    void checkBalance(ConsumeRecord param);
+
+    /**
+     * @Description 获取列表信息
+     * @author JerryWang
+     * @date 2017/8/15 10:38
+     * @param param
+     * @return
+     */
+    List<Map<String,String>> queryList(Map<String, String> param);
 }

@@ -1,5 +1,8 @@
 package com.sgcc.account.index.service;
 
+import com.sgcc.account.index.model.ConsumeRecord;
+import com.sgcc.comm.model.Query;
+
 import java.util.List;
 import java.util.Map;
 
@@ -29,4 +32,40 @@ public interface IndexService {
      */
     List<Map<String,String>> getNew(Map<String, String> param);
 
+    /**
+     * @Description 获取首页消费详情
+     * @author JerryWang
+     * @date 2017/8/13 20:40
+     * @param
+     * @return
+     */
+    Query queryList(Map<String, String> param);
+
+
+    /**
+     * @Description 保存消费详情
+     * @author JerryWang
+     * @date 2017/8/13 20:41
+     * @param param
+     * @return
+     */
+    String save(ConsumeRecord param);
+
+    /**
+     * @Description 获取记账信息
+     * @author JerryWang
+     * @date 2017/8/14 15:10
+     * @param param
+     * @return
+     */
+    Map<String,String> getInfo(Map<String, String> param);
+
+    /**
+     * @Description 获取余额信息
+     * @author JerryWang
+     * @date 2017/8/14 16:56
+     * @param param
+     * @return
+     */
+    Map<String,String> getBalance(Map<String, String> param);
 }

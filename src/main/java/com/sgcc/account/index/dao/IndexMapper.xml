@@ -50,6 +50,93 @@
           AND vi.update_time > #{dt}
         ORDER BY vi.update_time DESC
     </select>
+    <select id="getBalance" resultType="java.lang.Float">
+        select balance from account_info WHERE card_id = #{cardId} and user_id = #{userId};
+    </select>
+    <select id="getAccountInfo" resultType="java.util.Map">
+        SELECT
+          cr.uuid,
+          cr.recordtime,
+          cr.recordtime orgriTime,
+          cr.breakfast,
+          cr.lunch,
+          cr.dinner,
+          cr.other,
+          cr.remark
+        FROM consume_record cr
+        WHERE cr.card_id = #{cardId}
+              AND cr.user_id = #{userId}
+              AND cr.recordtime = #{recordTime}
+    </select>
+    <select id="queryList" resultType="java.util.Map">
+        SELECT
+          cr.uuid,
+          cr.breakfast,
+          cr.lunch,
+          cr.dinner,
+          cr.other,
+          cr.recordtime,
+          cr.remark
+        FROM consume_record cr
+        WHERE cr.card_id = #{cardId} AND cr.user_id = #{userId}
+        <if test="startTime != null and startTime != ''">
+            AND cr.recordtime >= #{startTime}
+        </if>
+        <if test="finishTime != null and finishTime != ''">
+            <![CDATA[
+            AND cr.recordtime <= #{finishTime}
+            ]]>
+        </if>
 
+        ORDER BY cr.recordtime DESC
+    </select>
+
+    <insert id="add">
+        INSERT INTO consume_record (
+          uuid,
+          user_id,
+          breakfast,
+          lunch,
+          dinner,
+          other,
+          recordtime,
+          updatetime,
+          remark,
+          card_id
+        )
+        VALUES (
+          #{uuid},
+          #{userId},
+          #{breakfast, jdbcType = DECIMAL},
+          #{lunch, jdbcType = DECIMAL},
+          #{dinner, jdbcType = DECIMAL},
+          #{other, jdbcType = DECIMAL},
+          #{recordTime},
+          sysdate(),
+          #{remark, jdbcType = VARCHAR},
+          #{cardId}
+        )
+    </insert>
+
+    <update id="upd">
+        UPDATE consume_record
+        SET
+          breakfast = #{breakfast, jdbcType = DECIMAL},
+          lunch = #{lunch, jdbcType = DECIMAL},
+          dinner = #{dinner, jdbcType = DECIMAL},
+          other = #{other, jdbcType = DECIMAL},
+          updatetime = sysdate(),
+          remark = #{remark, jdbcType = VARCHAR}
+        WHERE uuid = #{uuid};
+    </update>
+
+    <update id="checkBalance">
+        UPDATE account_info ai
+        SET ai.balance = balance - #{money} + ifnull((SELECT breakfast + lunch + dinner + other
+                                    FROM consume_record
+                                    WHERE uuid = #{uuid}),0)
+        WHERE ai.user_id = #{userId}
+              AND ai.card_id = #{cardId}
+    </update>
 
 </mapper>

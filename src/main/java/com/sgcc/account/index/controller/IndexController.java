@@ -1,5 +1,7 @@
 package com.sgcc.account.index.controller;
 
+import com.sgcc.account.index.model.ConsumeRecord;
+import com.sgcc.comm.model.Query;
 import com.sgcc.comm.util.service.CommService;
 import com.sgcc.account.index.service.IndexService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,13 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author jerrywang
@@ -84,6 +84,56 @@ public class IndexController {
         map.put("dt", sdf.format(now));
         map.put("query", indexService.getNew(param));
         return map;
+    }
+
+    @RequestMapping("/init")
+    public String indexInit(){
+        return "/index/indexInit";
+    }
+
+    @RequestMapping("/save")
+    public @ResponseBody String save(@RequestBody Map<String, String> param) {
+        ConsumeRecord consumeRecord = new ConsumeRecord();
+        consumeRecord.setUuid(param.get("uuid"));
+        consumeRecord.setUserId(commService.getLoginInfo().getLoginUser());
+        consumeRecord.setBreakfast(Float.parseFloat("".equals(param.get("breakfast")) ? "0":param.get("breakfast")));
+        consumeRecord.setLunch(Float.parseFloat("".equals(param.get("lunch")) ? "0":param.get("lunch")));
+        consumeRecord.setDinner(Float.parseFloat("".equals(param.get("dinner")) ? "0":param.get("dinner")));
+        consumeRecord.setOther(Float.parseFloat("".equals(param.get("other")) ? "0":param.get("other")));
+        consumeRecord.setCardId(param.get("cardId"));
+        consumeRecord.setRecordTime(param.get("recordTime"));
+        consumeRecord.setRemark(param.get("remark"));
+        return indexService.save(consumeRecord);
+    }
+
+    @RequestMapping("/getBalance")
+    public @ResponseBody Map<String, String> getBalance(String cardId) {
+        Map<String, String> param = new HashMap<>();
+        param.put("cardId", cardId);
+        param.put("userId", commService.getLoginInfo().getLoginUser());
+        return indexService.getBalance(param);
+    }
+
+    @RequestMapping("/getInfo")
+    public @ResponseBody Map<String, String> getInfo(String cardId, String recordTime) {
+        Map<String, String> param = new HashMap<>();
+        param.put("cardId", cardId);
+        param.put("userId", commService.getLoginInfo().getLoginUser());
+        param.put("recordTime", recordTime);
+        return indexService.getInfo(param);
+    }
+
+    /**
+     * @Description 获取列表信息
+     * @author JerryWang
+     * @date 2017/8/15 11:00
+     * @param
+     * @return
+     */
+    @RequestMapping("/queryList")
+    public @ResponseBody Query queryList(@RequestBody Map<String, String> param) {
+        param.put("userId", commService.getLoginInfo().getLoginUser());
+        return indexService.queryList(param);
     }
 
 }

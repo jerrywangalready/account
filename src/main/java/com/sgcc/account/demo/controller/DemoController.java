@@ -34,9 +34,4 @@ public class DemoController {
         return demoService.queryDemoList(param);
     }
 
-    @RequestMapping("/ffff")
-    public String ffff(){
-        return "/demo/ffff";
-    }
-
 }
