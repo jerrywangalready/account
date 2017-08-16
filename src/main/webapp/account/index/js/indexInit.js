@@ -122,9 +122,15 @@ indexInit.js.save = function () {
 
                     $("#balance").text(data.balance);
                     var colorClass = "minus";
+                    var scrollT = $(document).scrollTop();
+                    var bo = $("#balance").offset();
+                    var top = bo.top-scrollT-10;
+                    var topTo = bo.top-scrollT-30;
                     if(margeBalance > 0){
                         margeBalance = "+" + margeBalance;
                         colorClass = "plus";
+                        top -= 30;
+                        topTo = bo.top-scrollT;
                     }
 
                     indexInit.js.queryList();
@@ -132,10 +138,8 @@ indexInit.js.save = function () {
                     if(margeBalance != 0){
 
                         // 上浮动画效果
-                        var scrollT = $(document).scrollTop();
-                        var bo = $("#balance").offset();
-                        $("body").append("<div id='marge-balance' class='to-move' style='top:"+(bo.top-scrollT-10)+"px;left:"+(bo.left+60)+"px;position: fixed;z-index: 99999;'><span class='"+colorClass+"' style='font-size:20px;'>"+margeBalance+"</span></div>");
-                        $("#marge-balance").animate({top:bo.top-scrollT-30},2000,"linear");
+                        $("body").append("<div id='marge-balance' class='to-move' style='top:"+top+"px;left:"+(bo.left+20)+"px;position: fixed;z-index: 99999;'><span class='"+colorClass+"' style='font-size:20px;'>"+margeBalance+"</span></div>");
+                        $("#marge-balance").animate({top:topTo},2000,"linear");
                         setTimeout(function () {
                             $("#marge-balance").remove();
                         },2100);
