@@ -119,10 +119,10 @@
         {{each list as value i}}
         <tr>
             <td>{{value.recordtime}}</td>
-            <td>{{value.breakfast}}</td>
-            <td>{{value.lunch}}</td>
-            <td>{{value.dinner}}</td>
-            <td>{{value.other}}</td>
+            <td {{if value.breakfast == '0'}} class="grey" {{/if}}>{{value.breakfast}}</td>
+            <td {{if value.lunch == '0'}} class="grey" {{/if}}>{{value.lunch}}</td>
+            <td {{if value.dinner == '0'}} class="grey" {{/if}}>{{value.dinner}}</td>
+            <td {{if value.other == '0'}} class="grey" {{/if}}>{{value.other}}</td>
             <td>{{value.remark}}</td>
         </tr>
         {{/each}}
