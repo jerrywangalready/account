@@ -5,6 +5,7 @@
 %>
 <link href="<%=path%>/account/index/css/indexInit.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript" src="<%=path%>/account/index/js/indexInit.js"></script>
+<audio id="coin"></audio>
 <div>
     <br>
     <div class="row">

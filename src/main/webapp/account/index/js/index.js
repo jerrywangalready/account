@@ -55,7 +55,9 @@ index.js.load = function (on) {
     } else {
         $("#menu_bar").children().each(function (i,e) {
             var oc = $(this).find("a").attr("onclick");
-            if (oc.indexOf(on.split("/")[0]) > 0) {
+            console.info(oc)
+            console.info(on)
+            if (oc.indexOf(on.split("/")[0]) >= 0) {
                 $(this).addClass("current-menu-item");
                 $("#top_toolbar").find("li:eq("+i+")").addClass("current-menu-item");
                 return false;

@@ -140,6 +140,17 @@ indexInit.js.save = function () {
                         // 上浮动画效果
                         $("body").append("<div id='marge-balance' class='to-move' style='top:"+top+"px;left:"+(bo.left+20)+"px;position: fixed;z-index: 99999;'><span class='"+colorClass+"' style='font-size:20px;'>"+margeBalance+"</span></div>");
                         $("#marge-balance").animate({top:topTo},2000,"linear");
+
+                        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+                        var isOpera = userAgent.indexOf("Opera") > -1;
+                        if (userAgent.indexOf("Firefox") > -1 || userAgent.indexOf("Safari") > -1 || isOpera) {
+                            $("#coin").attr("src",path + "/account/index/media/1519.wav");
+                        }
+                        if (userAgent.indexOf("Chrome") > -1 || (userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera)){
+                            $("#coin").attr("src",path + "/account/index/media/1519.mp3");
+                        }
+
+                        $("#coin").attr("autoplay","autoplay");
                         setTimeout(function () {
                             $("#marge-balance").remove();
                         },2100);
