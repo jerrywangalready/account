@@ -68,7 +68,7 @@
                 </div>
                 <div class="mb_15">
                     <label for="breakfast">早餐</label>
-                    <input class="form-control" id="breakfast" name="breakfast" placeholder="0.0" validate="required">
+                    <input class="form-control" id="breakfast" name="breakfast" placeholder="0.0">
                 </div>
                 <div class="mb_15">
                     <label for="lunch">午餐</label>

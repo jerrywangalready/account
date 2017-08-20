@@ -22,7 +22,7 @@
     <script type="text/javascript" src="<%=path%>/account/login/js/login.js"></script>
 </head>
 <body>
-    <img id="logo" src="<%=path%>/comm/image/account_logo2.png">
+    <img id="logo" src="<%=path%>/comm/image/account.png">
     <div style="height: 2px;width: 170px;margin:0 auto">
         <div id="error_alert" class="alert alert-danger alert-dismissible fade in" role="alert" style="display: none;padding:7px;">
             <button type="button" class="close" data-dismiss="alert"><span class="sr-only">Close</span></button>
