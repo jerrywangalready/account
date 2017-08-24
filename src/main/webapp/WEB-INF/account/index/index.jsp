@@ -8,7 +8,7 @@
 
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>account</title>
+    <title>Account</title>
     <script type="text/javascript" src="<%=path%>/account/index/js/index.js"></script>
 <body>
 <div style="position: relative;height: auto;min-height: 100%;padding-bottom:50px;">
@@ -21,7 +21,7 @@
                     <ul class="custom-menu">
                         <li class="current-menu-item"><a href="javascript:void(0);" onclick="index.js.menuClick('index/init')">首页</a></li>
                         <li><a href="javascript:void(0);" onclick="index.js.menuClick('statistics/init')">餐费统计</a></li>
-                        <li name="settings_li" style="display:none;"><a href="javascript:void(0);" onclick="index.js.menuClick('settings/users')">设置1</a></li>
+                        <li name="settings_li"><a href="javascript:void(0);" onclick="index.js.menuClick('settings/init')">设置</a></li>
                     </ul>
                 </div>
             </div>
@@ -76,7 +76,8 @@
     <header>
         <div class="center-wrap">
             <div class="companyIdentity">
-                <a href="page-template-homepage-jquery.html"><img class="logo" src="<%=path%>/comm/image/logo.png" alt="account" /></a>
+                <a href="page-template-homepage-jquery.html"><img class="logo" src="<%=path%>/comm/image/logo_blue.png" alt="account" /></a>
+                <%--<span style="color:#007dc7;">ACCOUNT</span>--%>
             </div>
             <!-- END companyIdentity -->
 
@@ -85,7 +86,7 @@
                 <ul id="menu_bar">
                     <li class="current-menu-item"><a href="javascript:void(0);" onclick="index.js.menuClick('index/init')">首页</a></li>
                     <li><a href="javascript:void(0);" onclick="index.js.menuClick('statistics/init')">餐费统计</a></li>
-                    <li name="settings_li" style="display:none;"><a href="javascript:void(0);" onclick="index.js.menuClick('settings/users')">设置</a></li>
+                    <li name="settings_li"><a href="javascript:void(0);" onclick="index.js.menuClick('settings/init')">设置</a></li>
                     <%--<li><a href="javascript:void(0);" onclick="index.js.menuClick('image/init')">图</a></li :void(0);" onclick="index.js.menuClick('demo/init')">Demo</a></li>--%>
                 </ul>
             </nav>
@@ -139,11 +140,11 @@
                 <!-- END foot-copy -->
                 <a href="#" id="scroll_to_top" class="link-top">Scroll to Top</a>
                 <ul class="footer-nav">
-                    <li><a href="../../../../../../../../../Documents/hh/H159/page-template-homepage-lightbox-hero.html">Pages</a></li>
-                    <li><a href="../../../../../../../../../Documents/hh/H159/content-responsive-design.html">Features</a></li>
-                    <li><a href="../../../../../../../../../Documents/hh/H159/content-color-autumn.html">Colors</a></li>
-                    <li><a href="../../../../../../../../../Documents/hh/H159/page-template-shortcodelist.html">Shortcodes</a></li>
-                    <li><a href="../../../../../../../../../Documents/hh/H159/page-template-blog.html">Blog</a></li>
+                    <%--<li><a href="../../../../../../../../../Documents/hh/H159/page-template-homepage-lightbox-hero.html">Pages</a></li>--%>
+                    <%--<li><a href="../../../../../../../../../Documents/hh/H159/content-responsive-design.html">Features</a></li>--%>
+                    <%--<li><a href="../../../../../../../../../Documents/hh/H159/content-color-autumn.html">Colors</a></li>--%>
+                    <%--<li><a href="../../../../../../../../../Documents/hh/H159/page-template-shortcodelist.html">Shortcodes</a></li>--%>
+                    <%--<li><a href="../../../../../../../../../Documents/hh/H159/page-template-blog.html">Blog</a></li>--%>
                 </ul>
             </div>
             <!-- END center-wrap -->
