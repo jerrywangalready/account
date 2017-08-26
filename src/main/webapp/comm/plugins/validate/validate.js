@@ -68,7 +68,11 @@ $.fn.extend({
                                     return true;
                                 }
                             } else {
-                                if (valArray[v].indexOf("length") == 0) {
+                                if (valArray[v].indexOf(")") == valArray[v].length - 1) {
+                                    var result = eval(valArray[v]);
+                                    if(!result.result)
+                                    error.push({obj: $(this), info: result.info});
+                                }else if (valArray[v].indexOf("length") == 0) {
                                     var length = valArray[v].replace("length[", "").replace("]", "").split("-");
                                     if (length[0] > value.length) {
                                         error.push({obj: $(this), info: "不能小于" + length[0] + "个字!"});
@@ -76,6 +80,7 @@ $.fn.extend({
                                         error.push({obj: $(this), info: "不能大于" + length[1] + "个字!"});
                                     }
                                 }
+
                             }
 
                         }

@@ -82,7 +82,7 @@ indexInit.js.getInfo = function () {
     $.ajax({
         type:'POST',
         async: false,
-        url:path+'/index/getInfo.do',
+        url:path+'/index/getInfoByDate.do',
         data:{cardId:cardId, recordTime:recordTime},
         success:function (data) {
             $("#uuid").val(data.uuid);
@@ -169,4 +169,13 @@ indexInit.js.save = function () {
 indexInit.js.showMore = function () {
     $("#moreButtonDiv").hide();
     $("div[name=moreDiv]").slideDown();
+};
+
+indexInit.js.checkMoney = function (obj) {
+    var money = $(obj).val();
+    var reg = new RegExp('^[0-9]+(\\.[0-9]{0,2}){0,1}$');
+    var result = {};
+    result.info = "请输入最多两位小数的正数";
+    result.result = reg.test(money);
+    return result;
 };

@@ -114,8 +114,8 @@ public class IndexController {
         return indexService.getBalance(param);
     }
 
-    @RequestMapping("/getInfo")
-    public @ResponseBody Map<String, String> getInfo(String cardId, String recordTime) {
+    @RequestMapping("/getInfoByDate")
+    public @ResponseBody Map<String, String> getInfoByDate(String cardId, String recordTime) {
         Map<String, String> param = new HashMap<>();
         param.put("cardId", cardId);
         param.put("userId", commService.getLoginInfo().getLoginUser());

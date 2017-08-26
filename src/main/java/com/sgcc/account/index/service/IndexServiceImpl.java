@@ -97,7 +97,11 @@ public class IndexServiceImpl implements IndexService {
      * @return
      */
     public Map<String, String> getInfo(Map<String, String> param) {
-        return indexDao.getAccountInfo(param);
+        Map<String, String> result = indexDao.getAccountInfo(param);
+        if (result == null){
+            result = new HashMap<>();
+        }
+        return result;
     }
 
     /**

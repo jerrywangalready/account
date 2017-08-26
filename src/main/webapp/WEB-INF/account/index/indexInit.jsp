@@ -68,26 +68,26 @@
                 </div>
                 <div class="mb_15">
                     <label for="breakfast">早餐</label>
-                    <input class="form-control" id="breakfast" name="breakfast" placeholder="0.0">
+                    <input class="form-control" id="breakfast" name="breakfast" placeholder="0.0" validate="indexInit.js.checkMoney(this)">
                 </div>
                 <div class="mb_15">
                     <label for="lunch">午餐</label>
-                    <input class="form-control" id="lunch" name="lunch" placeholder="0.0">
+                    <input class="form-control" id="lunch" name="lunch" placeholder="0.0" validate="indexInit.js.checkMoney(this)">
                 </div>
                 <div class="mb_15">
                     <label for="dinner">晚餐</label>
-                    <input class="form-control" id="dinner" name="dinner" placeholder="0.0">
+                    <input class="form-control" id="dinner" name="dinner" placeholder="0.0" validate="indexInit.js.checkMoney(this)">
                 </div>
                 <div class="mb_15" id="moreButtonDiv">
                     <a class="right" style="margin-right:8px" onclick="indexInit.js.showMore()">more</a>
                 </div>
                 <div class="mb_15" name="moreDiv" style="display: none">
                     <label for="other">其它</label>
-                    <input class="form-control" id="other" name="other" placeholder="0.0">
+                    <input class="form-control" id="other" name="other" placeholder="0.0" validate="indexInit.js.checkMoney(this)">
                 </div>
                 <div class="mb_15" name="moreDiv" style="display: none">
                     <label for="remark">备注</label>
-                    <textarea class="form-control" id="remark" name="remark" rows="3"></textarea>
+                    <textarea class="form-control" id="remark" name="remark" rows="3" validate="length[0-40]"></textarea>
                 </div>
                 <br>
                 <div class="mb_15" style="padding:15px 0">
