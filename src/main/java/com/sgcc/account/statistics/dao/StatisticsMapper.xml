@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sgcc.account.statistics.dao.StatisticsDao">
+
+    <select id="queryList" resultType="java.util.Map">
+        select u.username,u.nickname,t.balance,SUM(c.breakfast) breakfastsum,SUM(c.lunch) lunchsum,SUM(c.dinner) dinnersum
+          from account_info t
+          LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
+          LEFT JOIN consume_record c ON t.card_id = c.card_id AND t.user_id = c.user_id
+         where t.card_id = #{cardId}
+         GROUP BY t.user_id
+    </select>
+
+</mapper>
