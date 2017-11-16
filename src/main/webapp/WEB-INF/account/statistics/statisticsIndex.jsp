@@ -13,11 +13,6 @@
         <div class="form-group col-md-4">
             <input type="text" class="form-control" id="queryName" name="queryName" placeholder="名称">
         </div>
-        <div class="form-group col-md-4">
-            <select class="form-control" id="queryType" name="queryType">
-                <option value="">-- 选择类型 --</option>
-            </select>
-        </div>
 
     </form>
 </div>
@@ -38,7 +33,8 @@
             <th>余额</th>
             <th>早餐总额</th>
             <th>午餐总额</th>
-            <th>完餐总额</th>
+            <th>晚餐总额</th>
+            <th>其他总额</th>
         </tr>
         </thead>
         <tbody>
@@ -56,6 +52,7 @@
             <td>{{value.breakfastsum}}</td>
             <td>{{value.lunchsum}}</td>
             <td>{{value.dinnersum}}</td>
+            <td>{{value.other}}</td>
 
         </tr>
         {{/each}}
