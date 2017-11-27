@@ -17,6 +17,7 @@ public class DemoController {
     @Autowired
     DemoService demoService;
 
+
     @RequestMapping("/init")
     public String init(){
         return "/demo/demo";
