@@ -46,7 +46,7 @@
         {{each list as value i}}
         <tr>
             <td>{{i+1}}</td>
-            <td>{{value.username}}</td>
+            <td><a href="javascript:void(0)" onclick="statistics.js.detail('{{value.username}}')">{{value.username}}</a></td>
             <td>{{value.nickname}}</td>
             <td>{{value.balance}}</td>
             <td>{{value.breakfastsum}}</td>

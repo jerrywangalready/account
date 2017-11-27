@@ -7,4 +7,6 @@ public interface StatisticsDao {
 
     List<Map<String,String>> queryList(Map<String, String> param);
 
+
+    List<Map<String,String>> queryDetailList(Map<String, String> param);
 }

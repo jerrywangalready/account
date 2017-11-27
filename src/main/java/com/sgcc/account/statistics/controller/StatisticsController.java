@@ -24,8 +24,18 @@ public class StatisticsController {
         return "/statistics/statisticsIndex";
     }
 
+    @RequestMapping("/detail")
+    public String statisticsDetail(){
+        return "/statistics/statisticsDetail";
+    }
+
     @RequestMapping("/queryList")
     public @ResponseBody Query queryList(@RequestBody Map<String, String> param) {
         return statisticsService.queryList(param);
+    }
+
+    @RequestMapping("/queryDetailList")
+    public @ResponseBody Query queryDetailList(@RequestBody Map<String,String> param){
+        return statisticsService.queryDetailList(param);
     }
 }

@@ -20,4 +20,27 @@
          GROUP BY t.user_id
     </select>
 
+    <select id="queryDetailList" resultType="java.util.Map">
+        SELECT
+        cr.uuid,
+        cr.breakfast,
+        cr.lunch,
+        cr.dinner,
+        cr.other,
+        cr.recordtime,
+        cr.remark
+        FROM consume_record cr
+        WHERE cr.card_id = #{cardId} AND cr.user_id = #{userId}
+        <if test="startTime != null and startTime != ''">
+            AND cr.recordtime >= #{startTime}
+        </if>
+        <if test="finishTime != null and finishTime != ''">
+            <![CDATA[
+            AND cr.recordtime <= #{finishTime}
+            ]]>
+        </if>
+
+        ORDER BY cr.recordtime DESC
+    </select>
+
 </mapper>
