@@ -4,6 +4,7 @@
     width:200px;
     margin-top: 20px;
     border-right:1px solid #2a6496;
+    margin-bottom: 10px;
 }
 .left-box ul{
 }
@@ -31,6 +32,6 @@
 .right-box {
     float: left;
     min-height: 100px;
-    padding: 0 20px;
+    padding:20px;
     width: 760px;
 }
