@@ -42,4 +42,21 @@ public class SettingsController {
         param.put("username", commService.getLoginInfo().getLoginUser());
         return settingsService.saveNewPassword(param);
     }
+
+    @RequestMapping("/changePassword")
+    public String changePassword(){
+        return "/settings/changePassword";
+    }
+
+    @RequestMapping("/maintainCard")
+    public String maintainCard(){
+        return "/settings/maintainCard";
+    }
+
+    @RequestMapping("/manageAccount")
+    public String manageAccount(){
+        return "/settings/manageAccount";
+    }
+
+
 }
