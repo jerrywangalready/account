@@ -6,11 +6,9 @@
     border-right:1px solid #2a6496;
 }
 .left-box ul{
-    margin-right: -1px;
 }
 .left-box li{
     list-style:none;
-    /*border-right: 1px solid #CCCCCC;*/
     margin-bottom: 0px;
     height: 37px;
     padding: 10px;
@@ -20,15 +18,14 @@
     line-height: 15px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    /*border-bottom: 1px solid #FFFFFF;*/
     border-top: 1px solid #FFFFFF;
-    border-right: 1px solid #2a6496;
 }
 
 .cur-li {
     background: #FFFFFF !important;
     border: 1px solid #2a6496 !important;
     border-right: 0px solid #2a6496 !important;
+    margin-right: -1px;
 }
 
 .right-box {
