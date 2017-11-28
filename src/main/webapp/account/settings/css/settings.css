@@ -31,7 +31,6 @@
 .right-box {
     float: left;
     min-height: 100px;
-    padding: 0 22px;
+    padding: 0 20px;
     width: 760px;
-    padding-top: 20px;
 }
