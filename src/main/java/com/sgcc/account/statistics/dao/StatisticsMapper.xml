@@ -5,12 +5,42 @@
 <mapper namespace="com.sgcc.account.statistics.dao.StatisticsDao">
 
     <select id="queryList" resultType="java.util.Map">
-        select u.username,u.nickname,t.balance,SUM(c.breakfast) breakfastsum,SUM(c.lunch) lunchsum,SUM(c.dinner) dinnersum
+        select u.username,u.nickname,t.balance,SUM(c.breakfast) breakfastsum,SUM(c.lunch) lunchsum,
+                SUM(c.dinner) dinnersum,sum(c.other) other
           from account_info t
           LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
           LEFT JOIN consume_record c ON t.card_id = c.card_id AND t.user_id = c.user_id
          where t.card_id = #{cardId}
+        <if test="queryCode != null and queryCode != ''">
+            AND t.user_id like CONCAT('%',#{queryCode},'%')
+        </if>
+        <if test="queryName != null and queryName != ''">
+            AND u.nickname like CONCAT('%',#{queryName},'%')
+        </if>
          GROUP BY t.user_id
+    </select>
+
+    <select id="queryDetailList" resultType="java.util.Map">
+        SELECT
+        cr.uuid,
+        cr.breakfast,
+        cr.lunch,
+        cr.dinner,
+        cr.other,
+        cr.recordtime,
+        cr.remark
+        FROM consume_record cr
+        WHERE cr.card_id = #{cardId} AND cr.user_id = #{userId}
+        <if test="startTime != null and startTime != ''">
+            AND cr.recordtime >= #{startTime}
+        </if>
+        <if test="finishTime != null and finishTime != ''">
+            <![CDATA[
+            AND cr.recordtime <= #{finishTime}
+            ]]>
+        </if>
+
+        ORDER BY cr.recordtime DESC
     </select>
 
 </mapper>

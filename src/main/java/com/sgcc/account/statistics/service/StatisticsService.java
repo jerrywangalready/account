@@ -8,4 +8,6 @@ import java.util.Map;
 public interface StatisticsService {
 
     Query queryList (Map<String, String> param);
+
+    Query queryDetailList(Map<String, String> param);
 }
