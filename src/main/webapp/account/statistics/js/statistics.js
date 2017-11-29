@@ -19,12 +19,13 @@ statistics.js.init = function () {
 statistics.js.query = function () {
     var cardId = getParameter(location.hash, "obj", "");
     var collector = $("#query_box").collector();
+
     collector.cardId = cardId;
 
-    var userId = $("#queryCode").val();
+    /*var userId = $("#queryCode").val();
     var userName = $("#queryName").val();
     collector.userId = userId;
-    collector.userName = userName;
+    collector.userName = userName;*/
     // $.post(path + "/statistics/queryList.do",{cardId:cardId},function (data) {
     //     console.info(data);
     //     var html = template('demo_users',{'list':data.list});

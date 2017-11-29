@@ -5,8 +5,8 @@
 <mapper namespace="com.sgcc.account.statistics.dao.StatisticsDao">
 
     <select id="queryList" resultType="java.util.Map">
-        select u.username,u.nickname,t.balance,SUM(c.breakfast) breakfastsum,SUM(c.lunch) lunchsum,
-                SUM(c.dinner) dinnersum,sum(c.other) other
+        select t.user_id,u.nickname,IFNULL(t.balance,0) balance,SUM(IFNULL(c.breakfast,0)) breakfastsum,SUM(IFNULL(c.lunch,0)) lunchsum,
+                SUM(IFNULL(c.dinner,0)) dinnersum,SUM(IFNULL(c.other,0)) other
           from account_info t
           LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
           LEFT JOIN consume_record c ON t.card_id = c.card_id AND t.user_id = c.user_id
@@ -17,7 +17,7 @@
         <if test="queryName != null and queryName != ''">
             AND u.nickname like CONCAT('%',#{queryName},'%')
         </if>
-         GROUP BY t.user_id
+         GROUP BY t.user_id,u.nickname,t.balance
     </select>
 
     <select id="queryDetailList" resultType="java.util.Map">
