@@ -6,7 +6,7 @@ import java.util.Map;
 
 public interface MaintainCardService {
 
-    public Query queryList(Map<String, String> param) ;
+     Query queryList(Map<String, String> param) ;
 
 
 }
