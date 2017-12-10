@@ -29,6 +29,10 @@ public class MaintainCardController {
         return maintainCardService.queryList(param);
     }
 
+    @RequestMapping("/addCardInfo")
+    public String addCardInfo(){
+        return "/maintainCard/addCardInfo";
+    }
 
 
 

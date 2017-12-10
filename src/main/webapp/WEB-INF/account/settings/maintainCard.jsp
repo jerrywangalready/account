@@ -8,7 +8,8 @@
 <div class="mb_15" style="margin-top:7px;">
     <form id="query_box" class="form-inline row" role="form">
         <div class="form-group col-md-4">
-            <input type="button" class="form-control" id="addCode" name="addCode" placeholder="增加" >
+            <%--<input class="btn btn-default" type="button" value="Input">--%>
+            <a class="glyphicon glyphicon-plus" href="javascript:void(0)" onclick="maintainCard.js.addCard()" >新增</a>
         </div>
 
 
@@ -27,10 +28,9 @@
         <tr>
             <th>序号</th>
             <th>饭卡名称</th>
-            <th>创建时间</th>
+            <%--<th>创建时间</th>--%>
             <th>饭卡管理员</th>
-            <th>修改</th>
-            <th>删除</th>
+            <th>操作</th>
         </tr>
         </thead>
         <tbody>
@@ -42,11 +42,13 @@
         {{each list as value i}}
         <tr>
             <td>{{i+1}}</td>
-            <td>{{value.cardName}}</td>
-            <td>{{value.createTime}}</td>
-            <td>{{value.cardManager}}</td>
-            <td onclick="maintainCard.js.changeCard('{{value.cardName}}')">修改</td>
-            <td onclick="maintainCard.js.deleteCard('{{value.cardName}}')">删除</td>
+            <td>{{value.card_name}}</td>
+            <%--<td>{{value.createTime}}</td>--%>
+            <td>{{value.card_manager}}</td>
+            <td>
+                <a onclick="maintainCard.js.changeCard('{{value.uuid}}')">修改</a>
+                <a onclick="maintainCard.js.deleteCard('{{value.uuid}}')">删除</a>
+            </td>
 
         </tr>
         {{/each}}

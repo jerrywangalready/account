@@ -5,7 +5,7 @@
 <mapper namespace="com.sgcc.account.settings.dao.MaintainCardDao">
 
     <select id="queryList" resultType="java.util.Map">
-        SELECT t.uuid,t.card_name,t.card_manager FROM card_info t
+        SELECT t.uuid,t.card_name,t.card_manager FROM card_info t WHERE 1=1
     </select>
 
 </mapper>
