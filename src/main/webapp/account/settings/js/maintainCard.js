@@ -40,7 +40,7 @@ maintainCard.js.addCard = function () {
         title:" 新增饭卡",
         area:['500px','450px'],
         scrollbar:false,
-        content:[path + '/launch/addCardInfo.do', 'no']
+        content:[path + '/maintainCard/addCardInfo.do', 'no']
     });
 };
 

@@ -24,14 +24,13 @@ public class MaintainCardController {
     MaintainCardService maintainCardService;
 
     @RequestMapping("/queryList")
-    public @ResponseBody
-    Query queryList(@RequestBody Map<String, String> param) {
+    public @ResponseBody Query queryList(@RequestBody Map<String, String> param) {
         return maintainCardService.queryList(param);
     }
 
     @RequestMapping("/addCardInfo")
     public String addCardInfo(){
-        return "/maintainCard/addCardInfo";
+        return "/settings/addCardInfo";
     }
 
 

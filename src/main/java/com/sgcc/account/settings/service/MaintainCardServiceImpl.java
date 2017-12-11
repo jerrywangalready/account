@@ -26,4 +26,6 @@ public class MaintainCardServiceImpl implements MaintainCardService {
         query.setTotal(((Page)list).getTotal());
         return query;
     }
+
+
 }
