@@ -1,7 +1,5 @@
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-  String path = request.getContextPath();
-%>
+<%@ include file="../../comm/head.jsp"%>
 <%--<link href="<%=path%>/account/index/css/indexInit.css" type="text/css" rel="stylesheet">--%>
 <script type="text/javascript" src="<%=path%>/account/settings/js/addCardInfo.js" ></script>
 
@@ -15,9 +13,11 @@
             <label for="cardName">饭卡名称</label>
             <input class="form-control" id="cardName" name="cardName"  validate="addCardInfo.js.checkMoney(this)">
         </div>
-        <div class="mb_15">
-            <label for="cardName">饭卡管理员</label>
-            <input class="form-control" id="cardManager" name="cardManager"  validate="addCardInfo.js.checkMoney(this)">
+        <div class="form-group col-md-4">
+            <label for="cardManager">饭卡管理员</label>
+            <select class="form-control" id="cardManager" name="cardManager">
+                <option value="">-- 选择饭卡管理员 --</option>
+            </select>
         </div>
         <br>
         <div class="mb_15" style="padding:15px 0">

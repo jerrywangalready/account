@@ -8,4 +8,27 @@
         SELECT t.uuid,t.card_name,t.card_manager FROM card_info t WHERE 1=1
     </select>
 
+    <insert id="add">
+        INSERT INTO card_info (
+        uuid,
+        card_id,
+        card_name,
+        card_manager
+        )
+        VALUES (
+        #{uuid},
+        #{uuid},
+        #{cardName, jdbcType = VARCHAR},
+        #{cardManager, jdbcType = VARCHAR}
+        )
+    </insert>
+
+    <update id="upd">
+        UPDATE card_info
+        SET
+        card_name = #{cardName, jdbcType = VARCHAR},
+        card_manager = #{cardManager, jdbcType = VARCHAR}
+        WHERE uuid = #{uuid};
+    </update>
+
 </mapper>
