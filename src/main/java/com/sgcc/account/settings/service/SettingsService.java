@@ -1,5 +1,6 @@
 package com.sgcc.account.settings.service;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,4 +26,13 @@ public interface SettingsService {
      * @return
      */
     String saveNewPassword(Map<String, String> param);
+
+    /**
+     * @Description 根据用户名获取权限
+     * @author JerryWang
+     * @date 2017/12/10 22:36
+     * @param username
+     * @return
+     */
+    List<String> getRoleByUsername(String username);
 }

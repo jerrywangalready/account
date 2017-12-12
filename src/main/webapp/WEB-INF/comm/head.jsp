@@ -21,6 +21,7 @@
 <link rel="stylesheet" type="text/css" href="<%=path%>/comm/plugins/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" />
 <link rel="stylesheet" type="text/css" href="<%=path%>/comm/plugins/jquery-css3-shake/css/shake.css" />
 <link rel="stylesheet" type="text/css" href="<%=path%>/comm/plugins/jquery-ui-1.12.1.custom/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="<%=path%>/comm/plugins/bootstrap-select/dist/css/bootstrap-select.css">
 <script type="text/javascript" src="<%=path%>/comm/plugins/jQuery/jquery-3.1.1.min.js"></script>
 <!--[if lt IE 9]>
 <link rel="stylesheet" href="<%=path%>/account/index/css/IE.css"/>
@@ -41,6 +42,8 @@
 <script type="text/javascript" src="<%=path%>/comm/plugins/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
 <script type="text/javascript" src="<%=path%>/comm/plugins/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 <script type="text/javascript" src="<%=path%>/comm/plugins/layer/layer.min.js"></script>
+<script type="text/javascript" src="<%=path%>/comm/plugins/bootstrap-select/dist/js/bootstrap-select.js"></script>
+<script type="text/javascript" src="<%=path%>/comm/plugins/bootstrap-select/dist/js/i18n/defaults-zh_CN.js"></script>
 
 <!-- 自封装插件 -->
 <script type="text/javascript" src="<%=path%>/comm/plugins/enterListener/enterListener.js"></script>

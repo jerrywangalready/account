@@ -15,4 +15,8 @@
         WHERE su.username = #{username}
               AND su.password = #{password}
     </select>
+
+    <select id="getRoleByUsername" resultType="string">
+        SELECT role_id FROM p_role_user WHERE username = #{username};
+    </select>
 </mapper>

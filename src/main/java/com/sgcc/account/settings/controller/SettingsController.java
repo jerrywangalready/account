@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -58,5 +60,31 @@ public class SettingsController {
         return "/settings/manageAccount";
     }
 
+    @RequestMapping("/getRole")
+    public @ResponseBody List<String> getRoleByUsername(){
+        String username = commService.getLoginInfo().getLoginUser();
+        if("superadmin".equals(username)){
+            List<String> list = new ArrayList<String>();
+            list.add("superadmin");
+            return list;
+        }else {
+            return settingsService.getRoleByUsername(username);
+        }
+    }
 
+    @RequestMapping("/getLiveOptions")
+    public @ResponseBody List<Map<String, String>> getLiveOptions(){
+        List<Map<String, String>> list = new ArrayList<>();
+        Map<String, String> p = new HashMap<>();
+        p.put("key", "");
+        p.put("value", "");
+        list.add(p);
+        for (int i = 0; i < 20; i++) {
+            Map<String, String> param = new HashMap<>();
+            param.put("key", i+"");
+            param.put("value", "第"+i+"个");
+            list.add(param);
+        }
+        return list;
+    }
 }

@@ -1,5 +1,6 @@
 package com.sgcc.account.settings.dao;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -24,4 +25,13 @@ public interface SettingsDao {
      * @param param
      */
     void saveNewPassword(Map<String, String> param);
+
+    /**
+     * @Description 根据用户名获取角色
+     * @author JerryWang
+     * @date 2017/12/10 22:39
+     * @param username
+     * @return
+     */
+    List<String> getRoleByUsername(String username);
 }

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -52,6 +53,17 @@ public class SettingsServiceImpl implements SettingsService {
             e.printStackTrace();
             return "false";
         }
+    }
+
+    /**
+     * @Description 根据用户名获取角色
+     * @author JerryWang
+     * @date 2017/12/10 22:37
+     * @param username
+     * @return
+     */
+    public List<String> getRoleByUsername(String username) {
+        return settingsDao.getRoleByUsername(username);
     }
 
 }
