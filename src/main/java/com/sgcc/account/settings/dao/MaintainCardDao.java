@@ -11,4 +11,6 @@ public interface MaintainCardDao {
     void add(Map<String, String> param);
 
     void upd(Map<String, String> param);
+
+    List<Map<String,String>> getManagerOptions();
 }

@@ -8,6 +8,10 @@
         SELECT t.uuid,t.card_name,t.card_manager FROM card_info t WHERE 1=1
     </select>
 
+    <select id="getManagerOptions" resultType="java.util.Map">
+        SELECT t.username,t.nickname FROM s_users t WHERE t.isenable = '1'
+    </select>
+
     <insert id="add">
         INSERT INTO card_info (
         uuid,

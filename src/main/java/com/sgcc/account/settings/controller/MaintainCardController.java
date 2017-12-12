@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -47,7 +49,18 @@ public class MaintainCardController {
         return maintainCardService.save(param);
     }
 
-
+    @RequestMapping("/getManagerOptions")
+    public @ResponseBody
+    List<Map<String, String>> getManagerOptions(){
+        /*List<Map<String, String>> list = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            Map<String, String> param = new HashMap<>();
+            param.put("key", i+"");
+            param.put("value", "第"+i+"个");
+            list.add(param);
+        }*/
+        return maintainCardService.getManagerOptions();
+    }
 
 
 

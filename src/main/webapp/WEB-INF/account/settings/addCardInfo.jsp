@@ -11,13 +11,14 @@
         <input type="hidden" id="uuid" name="uuid">
         <div class="mb_15">
             <label for="cardName">饭卡名称</label>
-            <input class="form-control" id="cardName" name="cardName"  validate="addCardInfo.js.checkMoney(this)">
+            <input class="form-control" id="cardName" name="cardName"  validate="required,length[0-50]">
         </div>
         <div class="form-group col-md-4">
             <label for="cardManager">饭卡管理员</label>
-            <select class="form-control" id="cardManager" name="cardManager">
+           <%-- <select class="form-control" id="cardManager" name="cardManager">
                 <option value="">-- 选择饭卡管理员 --</option>
-            </select>
+            </select>--%>
+            <select type="text" id="cardManager" class="form-control" data-live-search="true"></select>
         </div>
         <br>
         <div class="mb_15" style="padding:15px 0">
