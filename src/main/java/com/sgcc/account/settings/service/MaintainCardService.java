@@ -9,4 +9,5 @@ public interface MaintainCardService {
      Query queryList(Map<String, String> param) ;
 
 
+    String save(Map<String, String> param);
 }
