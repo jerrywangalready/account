@@ -116,7 +116,7 @@ public class IndexServiceImpl implements IndexService {
         Float balance = indexDao.getBalance(param);
 
         Map<String, String> returnMap = new HashMap<>();
-        returnMap.put("balance", String.valueOf(balance));
+        returnMap.put("balance", String.valueOf(balance == null ? 0:balance));
         Date now = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         returnMap.put("today", sdf.format(now));
