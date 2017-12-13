@@ -13,4 +13,6 @@ public interface MaintainCardDao {
     void upd(Map<String, String> param);
 
     List<Map<String,String>> getManagerOptions();
+
+    void deleteCardInfo(String uuid);
 }

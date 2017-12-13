@@ -13,4 +13,6 @@ public interface MaintainCardService {
     String save(Map<String, String> param);
 
     List<Map<String,String>> getManagerOptions();
+
+    String deleteCardInfo(Map<String, String> param);
 }

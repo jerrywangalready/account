@@ -45,11 +45,29 @@ maintainCard.js.addCard = function () {
 };
 
 //修改
-maintainCard.js.changeCard = function(){
+maintainCard.js.changeCard = function(uuid){
 
 };
 
 //删除
-maintainCard.js.deleteCard = function () {
+maintainCard.js.deleteCard = function (uuid) {
+    var param = {};
+    param.uuid = uuid;
+    console.info(param);
 
+    $.ajax({
+        type:'POST',
+        url:path+"/maintainCard/deleteCardInfo.do",
+        contentType:'application/json',
+        data:JSON.stringify(param),
+        success:function (data) {
+
+            if (data == "success"){
+                layer.msg("删除成功！");
+                maintainCard.js.init();
+            }else{
+                layer.msg("删除失败！");
+            }
+        }
+    });
 };

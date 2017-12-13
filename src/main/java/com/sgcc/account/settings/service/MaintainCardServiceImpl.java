@@ -60,4 +60,17 @@ public class MaintainCardServiceImpl implements MaintainCardService {
         return list;
     }
 
+    @Override
+    public String deleteCardInfo(Map<String, String> param){
+        try{
+            String uuid = param.get("uuid");
+            maintainCardDao.deleteCardInfo(uuid);
+        }catch (Exception e){
+            e.printStackTrace();
+            return "false";
+        }
+        return "success";
+    }
+
+
 }

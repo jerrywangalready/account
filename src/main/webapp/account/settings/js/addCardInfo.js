@@ -25,6 +25,8 @@ addCardInfo.js.init = function () {
 
 addCardInfo.js.save = function () {
     var param = $("#main_form").validate();
+    var managerName = $("#cardManager").val();
+    param.cardManager = managerName;
     console.info(param);
 
     $.ajax({

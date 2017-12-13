@@ -5,11 +5,14 @@
 <mapper namespace="com.sgcc.account.settings.dao.MaintainCardDao">
 
     <select id="queryList" resultType="java.util.Map">
-        SELECT t.uuid,t.card_name,t.card_manager FROM card_info t WHERE 1=1
+        SELECT t.uuid,t.card_name,u.nickname card_manager
+        FROM card_info t
+        LEFT JOIN s_users u ON t.card_manager = u.username AND u.isenable = '1'
+
     </select>
 
     <select id="getManagerOptions" resultType="java.util.Map">
-        SELECT t.username,t.nickname FROM s_users t WHERE t.isenable = '1'
+        SELECT t.username,t.nickname FROM s_users t WHERE t.isenable = '1' ;
     </select>
 
     <insert id="add">
@@ -24,7 +27,7 @@
         #{uuid},
         #{cardName, jdbcType = VARCHAR},
         #{cardManager, jdbcType = VARCHAR}
-        )
+        );
     </insert>
 
     <update id="upd">
@@ -34,5 +37,10 @@
         card_manager = #{cardManager, jdbcType = VARCHAR}
         WHERE uuid = #{uuid};
     </update>
+
+    <delete id="deleteCardInfo">
+        DELETE FROM card_info WHERE uuid = #{uuid};
+
+    </delete>
 
 </mapper>

@@ -62,6 +62,11 @@ public class MaintainCardController {
         return maintainCardService.getManagerOptions();
     }
 
+    @RequestMapping("/deleteCardInfo")
+    public  @ResponseBody String deleteCardInfo(@RequestBody Map<String,String> param){
+        return maintainCardService.deleteCardInfo(param);
+    }
+
 
 
 
