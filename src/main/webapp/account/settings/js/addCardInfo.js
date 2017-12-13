@@ -1,5 +1,6 @@
 jQuery.namespace("addCardInfo");
 $(function () {
+
     addCardInfo.js.init();
 });
 

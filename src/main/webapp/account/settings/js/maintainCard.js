@@ -40,7 +40,7 @@ maintainCard.js.addCard = function () {
         title:" 新增饭卡",
         area:['500px','450px'],
         scrollbar:false,
-        content:[path + '/maintainCard/addCardInfo.do', 'no']
+        content:[path + '/maintainCard/addCardInfo.do?uuid=56789', 'no']
     });
 };
 
@@ -58,8 +58,9 @@ maintainCard.js.deleteCard = function (uuid) {
     $.ajax({
         type:'POST',
         url:path+"/maintainCard/deleteCardInfo.do",
-        contentType:'application/json',
-        data:JSON.stringify(param),
+        //contentType:'application/json',
+       // data:JSON.stringify(param),
+        data:{uuid:uuid},
         success:function (data) {
 
             if (data == "success"){

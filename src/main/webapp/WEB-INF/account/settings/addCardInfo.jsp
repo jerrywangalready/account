@@ -2,13 +2,15 @@
 <%@ include file="../../comm/head.jsp"%>
 <%--<link href="<%=path%>/account/index/css/indexInit.css" type="text/css" rel="stylesheet">--%>
 <script type="text/javascript" src="<%=path%>/account/settings/js/addCardInfo.js" ></script>
-
+<%
+    String uuid = request.getAttribute("uuid").toString();
+%>
 <h3>饭卡</h3>
 <hr>
 
 <div class="col-md-3" style="margin-top: 7px;" >
     <form role="form" id="main_form">
-        <input type="hidden" id="uuid" name="uuid">
+        <input type="hidden" id="uuid" name="uuid" value="${uuid}">
         <div class="mb_15">
             <label for="cardName">饭卡名称</label>
             <input class="form-control" id="cardName" name="cardName"  validate="required,length[0-50]">

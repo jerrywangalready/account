@@ -5,10 +5,12 @@ import com.sgcc.account.settings.service.MaintainCardService;
 import com.sgcc.comm.model.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,8 +33,9 @@ public class MaintainCardController {
         return maintainCardService.queryList(param);
     }
 
-    @RequestMapping("/addCardInfo")
-    public String addCardInfo(){
+    @RequestMapping("addCardInfo")
+    public String addCardInfo(String uuid, Model model){
+        model.addAttribute("uuid",uuid);
         return "/settings/addCardInfo";
     }
 
@@ -63,7 +66,10 @@ public class MaintainCardController {
     }
 
     @RequestMapping("/deleteCardInfo")
-    public  @ResponseBody String deleteCardInfo(@RequestBody Map<String,String> param){
+//    public  @ResponseBody String deleteCardInfo(@RequestBody Map<String,String> param){
+    public  @ResponseBody String deleteCardInfo(String uuid){
+        Map<String,String> param = new HashMap<>();
+        param.put("uuid",uuid);
         return maintainCardService.deleteCardInfo(param);
     }
 
