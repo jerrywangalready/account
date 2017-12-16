@@ -26,10 +26,10 @@
     <span>未查询到任何数据!</span>
     {{/if}}
     {{each list as value i}}
-        <div class="card card_color1">
+        <div class="card card_color{{value.card_color}}">
             <div class="card_title">{{value.card_name}}</div>
-            <div class="card_balance">￥1430</div>
-            <div class="card_owner">卡主:曾兴</div>
+            <div class="card_balance">{{value.balance}}</div>
+            <div class="card_owner">卡主:{{value.card_manager}}</div>
         </div>
     {{/each}}
 </script>
