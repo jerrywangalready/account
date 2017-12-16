@@ -8,10 +8,8 @@ import com.sgcc.comm.util.CommUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 @Service
 public class MaintainCardServiceImpl implements MaintainCardService {
 
@@ -19,15 +17,17 @@ public class MaintainCardServiceImpl implements MaintainCardService {
     MaintainCardDao maintainCardDao;
 
     @Override
-    public Query queryList(Map<String, String> param) {
-        PageHelper.startPage(Integer.parseInt(param.get("pageNum")),Integer.parseInt(param.get("pageSize")));
+    public List<Map<String,String>> queryList(Map<String, String> param) {
+        /*PageHelper.startPage(Integer.parseInt(param.get("pageNum")),Integer.parseInt(param.get("pageSize")));
         List<Map<String,String>> list = maintainCardDao.queryList(param);
         Query query = new Query();
         query.setList(list);
         query.setPageNum(Integer.parseInt(param.get("pageNum")));
         query.setPageSize(Integer.parseInt(param.get("pageSize")));
-        query.setTotal(((Page)list).getTotal());
-        return query;
+        query.setTotal(((Page)list).getTotal());*/
+
+        List<Map<String,String>> list = maintainCardDao.queryList(param);
+        return list;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class MaintainCardServiceImpl implements MaintainCardService {
         try {
             //maintainCardDao.checkBalance(param);
             // 如果uuid为空,插入
-            if ("".equals(param.get("uuid"))) {
+            if ("null".equals(param.get("uuid"))) {
                 param.put("uuid",CommUtil.getUUID());
                 maintainCardDao.add(param);
             }else {// 修改

@@ -23,11 +23,11 @@ maintainCard.js.query = function(){
         data:JSON.stringify(collector),
         success:function (data) {
             console.info(data);
-            var html = template('demo_cards',{'list':data.list});
+            var html = template('demo_cards',{'list':data});
             console.info(html);
             $("#table_div").html(html);
             //初始化页码按钮
-            $("#page-bar").page(data);
+            //$("#page-bar").page(data);
         }
     });
 
@@ -40,13 +40,19 @@ maintainCard.js.addCard = function () {
         title:" 新增饭卡",
         area:['500px','450px'],
         scrollbar:false,
-        content:[path + '/maintainCard/addCardInfo.do?uuid=56789', 'no']
+        content:[path + '/maintainCard/addCardInfo.do', 'no']
     });
 };
 
 //修改
 maintainCard.js.changeCard = function(uuid){
-
+    layer.open({
+        type:2,
+        title:" 新增饭卡",
+        area:['500px','450px'],
+        scrollbar:false,
+        content:[path + '/maintainCard/addCardInfo.do?uuid='+uuid, 'no']
+    });
 };
 
 //删除

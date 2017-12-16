@@ -29,7 +29,7 @@ public class MaintainCardController {
     MaintainCardService maintainCardService;
 
     @RequestMapping("/queryList")
-    public @ResponseBody Query queryList(@RequestBody Map<String, String> param) {
+    public @ResponseBody List<Map<String,String>> queryList(@RequestBody Map<String, String> param) {
         return maintainCardService.queryList(param);
     }
 
