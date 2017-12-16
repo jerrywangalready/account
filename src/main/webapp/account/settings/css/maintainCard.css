@@ -1,0 +1,47 @@
+#table_div {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.card {
+    float: left;
+    border: 1px solid #CCCCCC;
+    width: 230px;
+    height: 140px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #aaaaaa;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.card_title {
+    font-weight: bold;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+.card_balance {
+    color: #fff;
+    font-size: 26px;
+    margin: 10px 0 10px 80px;
+}
+
+.card_owner {
+    background: #eee;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 2px 10px;
+}
+
+.card_color1 {
+    background-color: #428bca;
+}
+
+.card_color2 {
+    background-color: #5cb85c;
+}
