@@ -27,7 +27,9 @@
     {{/if}}
     {{each list as value i}}
         <div class="card card_color{{value.card_color}}">
-            <div class="card_title">{{value.card_name}}</div>
+            <div class="card_title">
+                {{value.card_name}}
+                <a class="glyphicon glyphicon-cog card_button" href="javascript:void(0)" onclick="" ></a></div>
             <div class="card_balance">{{value.balance}}</div>
             <div class="card_owner">卡主:{{value.card_manager}}</div>
         </div>

@@ -24,6 +24,12 @@
     color: #FFFFFF;
 }
 
+.card_button {
+    float: right;
+    font-size: 20px;
+    text-decoration:none !important;
+}
+
 .card_balance {
     color: #fff;
     font-size: 26px;
