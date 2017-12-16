@@ -28,12 +28,35 @@
     float: right;
     font-size: 20px;
     text-decoration:none !important;
+    color: #FFFFFF;
+}
+
+.card_button:hover {
+    color: #FFFFFF;
+
+    animation-name:settings;/*动画属性名，也就是我们前面keyframes定义的动画名*/
+    animation-duration: 1s;/*动画持续时间*/
+    animation-timing-function: linear;
+    /*
+    动画频率，有匀速，先快后慢    linear：动画以匀速运动
+    ease：默认值，开始慢，中间快，结束慢，不对称
+    ease-in：开始慢，后面快
+    ease-out：开始快，后面慢
+    ease-in-out：开始慢，中间快，结束慢，对称（注意与ease的区别）
+    cubic-bezier(n,n,n,n)：可以使用cubic-bezier自定义速度，n的取值从0到1
+    */
+    animation-delay: 0s;/*动画延迟时间*/
+    animation-iteration-count: 1;/*定义循环资料，infinite为无限次*/
+    animation-direction: alternate;/*定义动画方式， normal 动画仅正向播放。 alternate 动画正向播放奇数次迭代，并反向播放偶数次迭代。在反向播放周期中，与 animation-timing-function 关联的值也会反转。*/
+        /*transform:rotate(10deg);*/
+    /*-ms-transform:rotate(10deg); !* IE 9 *!*/
+    /*-webkit-transform:rotate(10deg); !* Opera, Chrome, and Safari *!*/
 }
 
 .card_balance {
     color: #fff;
     font-size: 26px;
-    margin: 10px 0 10px 80px;
+    margin: 10px 0 10px 100px;
 }
 
 .card_owner {
@@ -82,4 +105,22 @@
 
 .card_color9 {
     background-color: #f3cb3b;
+}
+
+@-moz-keyframes settings{
+    0% {
+        -moz-transform:rotate(0deg);
+    }
+    25% {
+        -moz-transform:rotate(90deg);
+    }
+    50% {
+        -moz-transform:rotate(180deg);
+    }
+    75% {
+        -moz-transform:rotate(270deg);
+    }
+    100% {
+        -moz-transform:rotate(360deg);
+    }
 }
