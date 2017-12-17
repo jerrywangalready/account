@@ -10,7 +10,6 @@
     <form id="query_box" class="form-inline row" role="form">
         <div class="form-group col-md-4">
             <%--<input class="btn btn-default" type="button" value="Input">--%>
-            <a class="glyphicon glyphicon-plus" href="javascript:void(0)" onclick="maintainCard.js.addCard()" >新增</a>
         </div>
 
 
@@ -34,4 +33,7 @@
             <div class="card_owner">卡主 : {{value.card_manager}}</div>
         </div>
     {{/each}}
+    <div class="card card_add_button" onclick="maintainCard.js.addCard()">
+        <a class="glyphicon glyphicon-plus add_button" href="javascript:void(0)" ></a>
+    </div>
 </script>

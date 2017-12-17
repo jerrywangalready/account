@@ -24,6 +24,24 @@
     color: #FFFFFF;
 }
 
+.card_add_button {
+    text-align: center;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.add_button {
+    font-size: 98px;
+    color: #fff;
+    margin-top: 5px;
+    pointer-events: none;
+}
+
+.add_button:hover {
+    color: #FFFFFF;
+    text-decoration:none !important;
+}
+
 .card_button {
     float: right;
     font-size: 20px;
@@ -65,6 +83,7 @@
     -moz-border-radius: 5px;
     border-radius: 5px;
     padding: 2px 10px;
+    height: 26px;
 }
 
 .card_color0 {

@@ -38,7 +38,7 @@ maintainCard.js.addCard = function () {
     layer.open({
         type:2,
         title:" 新增饭卡",
-        area:['500px','450px'],
+        area:['375px','280px'],
         scrollbar:false,
         content:[path + '/maintainCard/addCardInfo.do', 'no']
     });

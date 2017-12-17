@@ -55,14 +55,12 @@ public class MaintainCardController {
     @RequestMapping("/getManagerOptions")
     public @ResponseBody
     List<Map<String, String>> getManagerOptions(){
-        /*List<Map<String, String>> list = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            Map<String, String> param = new HashMap<>();
-            param.put("key", i+"");
-            param.put("value", "第"+i+"个");
-            list.add(param);
-        }*/
-        return maintainCardService.getManagerOptions();
+        List<Map<String, String>> list = maintainCardService.getManagerOptions();
+        Map<String, String> param = new HashMap<>();
+        param.put("username","");
+        param.put("nickname", "无");
+        list.add(0, param);
+        return list;
     }
 
     @RequestMapping("/deleteCardInfo")
