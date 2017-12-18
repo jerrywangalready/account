@@ -290,3 +290,7 @@
         transform: rotate(0deg)
     }
 }
+
+.layer_box {
+    padding: 10px;
+}

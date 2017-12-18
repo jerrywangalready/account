@@ -9,9 +9,8 @@
     <div class="left-box">
         <ul>
             <li labelName="changePassword">密码修改</li>
-            <li labelName="maintainCard" class="hidden">饭卡维护</li>
             <li labelName="manageAccount" class="hidden">账号管理</li>
-            <li labelName="memberMaintain" class="hidden">成员维护</li>
+            <li labelName="maintainCard" class="hidden">饭卡维护</li>
         </ul>
     </div>
     <div class="right-box">

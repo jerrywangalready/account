@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sgcc.account.settings.dao.ManageAccountDao">
+
+    <select id="queryList" resultType="map">
+        SELECT
+            s.uuid,
+            s.username,
+            s.nickname,
+            date_format(s.create_time, '%Y-%m-%d %T') create_time
+          FROM s_users s
+         WHERE s.isenable = '1'
+
+    </select>
+    <select id="checkUsername" resultType="int">
+        select count(1) from s_users WHERE username = #{username}
+    </select>
+
+    <insert id="addUser">
+        insert into s_users (
+          uuid, username, password, nickname, create_time, isenable
+          ) values (
+          #{uuid}, #{username}, #{password}, #{nickname}, sysdate(), '1'
+          );
+    </insert>
+    <update id="updateUser">
+        update s_users set
+          password = #{password},
+          nickname = #{nickname}
+         where uuid = #{uuid};
+    </update>
+    <select id="getUserInfoByUuid" resultType="map">
+        select uuid, username, nickname, password from s_users WHERE uuid = #{uuid};
+    </select>
+    <update id="removeUserByUuid">
+        update s_users set isenable = '0' where uuid = #{uuid};
+    </update>
+</mapper>
