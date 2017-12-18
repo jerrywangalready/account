@@ -8,8 +8,8 @@
 <div class="col-md-3" style="margin-top: 7px;" >
     <form role="form" id="main_form" style="padding: 16px;">
         <input type="hidden" id="uuid" name="uuid" value="${uuid}">
-
-        <div class="card_big card_color2">
+        <input type="hidden" id="cardColor" name="cardColor" value="${cardColor}">
+        <div class="card_big card_color${cardColor}">
             <div class="">
                 <input class="form-control" placeholder="饭卡名称" id="cardName" name="cardName"  validate="required,length[0-50]">
             <div class="card_balance_big">￥0</div>

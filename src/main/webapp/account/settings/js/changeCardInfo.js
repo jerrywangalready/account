@@ -1,13 +1,16 @@
-jQuery.namespace("addCardInfo");
+jQuery.namespace("changeCardInfo");
 $(function () {
 
-    addCardInfo.js.init();
+    changeCardInfo.js.init();
 });
 
-addCardInfo.js = {};
+changeCardInfo.js = {};
 
-addCardInfo.js.init = function () {
+changeCardInfo.js.init = function () {
     console.info("123");
+    //初始化卡片数据
+    changeCardInfo.js.query();
+
     // 初始化查询项(必须先初始化字典表)
 
     //$("#cardManager").dict({table:"s_users",key:"username",value:"nickname"});
@@ -22,9 +25,27 @@ addCardInfo.js.init = function () {
 
 };
 
+changeCardInfo.js.query = function(){
+    var uuid = $("#uuid").val();
+    console.info(uuid);
+    $.ajax({
+        type:'POST',
+        url:path+"/maintainCard/queryCardInfoByUuid.do",
+        //contentType:'application/json',
+        data:{"uuid":uuid},
+        success:function (data) {
+            console.info(data);
+            var html = template('demo_cards',{'list':data});
+            console.info(html);
+            $("#table_div").html(html);
+            //初始化页码按钮
+            //$("#page-bar").page(data);
+        }
+    });
+};
 
 
-addCardInfo.js.save = function () {
+changeCardInfo.js.save = function () {
     var param = $("#main_form").validate();
     var managerName = $("#cardManager").val();
     param.cardManager = managerName;
@@ -37,7 +58,7 @@ addCardInfo.js.save = function () {
         url:path+'/maintainCard/save.do',
         contentType:'application/json',
         data:JSON.stringify(param),
-        success:function (uuid) {
+        success:function () {
             //$("#uuid").val(uuid);
           parent.layer.msg("保存成功！");
           parent.maintainCard.js.init();

@@ -51,4 +51,18 @@
 
     </delete>
 
+    <select id="queryCardInfoByUuid" resultType="java.util.Map">
+        SELECT t.uuid,t.card_name,u.nickname card_manager,ifnull(b.balance, 0) balance,t.card_color
+        FROM card_info t
+        LEFT JOIN s_users u ON t.card_manager = u.username AND u.isenable = '1'
+        LEFT JOIN (SELECT a.card_id,sum(a.balance) balance
+        FROM account_info a
+        LEFT JOIN card_info c on a.card_id = c.card_id
+        GROUP BY a.card_id
+        ) b ON t.card_id = b.card_id
+        WHERE t.uuid = #{uuid}
+
+
+    </select>
+
 </mapper>

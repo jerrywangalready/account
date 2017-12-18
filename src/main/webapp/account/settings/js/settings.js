@@ -31,3 +31,7 @@ settings.js.init = function () {
     $(".left-box li[labelName="+label+"]").addClass("cur-li");
     
 };
+
+settings.js.test =function(uuid){
+    alert("ojojojj");
+};

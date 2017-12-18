@@ -28,6 +28,17 @@ public class MaintainCardController {
     @Autowired
     MaintainCardService maintainCardService;
 
+    @RequestMapping("/maintainCardInfo")
+    public String maintainCardInfo(){
+        return "/settings/maintainCard_info";
+    }
+
+    @RequestMapping("/maintainCardDetail")
+    public String maintainCardDetail(String uuid,Model model){
+        model.addAttribute("uuid",uuid);
+        return "/settings/maintainCard_detail";
+    }
+
     @RequestMapping("/queryList")
     public @ResponseBody List<Map<String,String>> queryList(@RequestBody Map<String, String> param) {
         return maintainCardService.queryList(param);
@@ -36,7 +47,20 @@ public class MaintainCardController {
     @RequestMapping("addCardInfo")
     public String addCardInfo(String uuid, Model model){
         model.addAttribute("uuid",uuid);
+        int n = (int) (Math.random()*10);
+        model.addAttribute("cardColor",n);
         return "/settings/addCardInfo";
+    }
+
+    @RequestMapping("/changeCardInfo")
+    public String changeCardInfo(String uuid,Model model){
+        model.addAttribute("uuid",uuid);
+        return "/settings/changeCardInfo";
+    }
+
+    @RequestMapping ("/queryCardInfoByUuid")
+    public @ResponseBody List<Map<String,String>> queryCardInfoByUuid(String uuid){
+        return maintainCardService.queryCardInfoByUuid(uuid);
     }
 
     @RequestMapping("/save")

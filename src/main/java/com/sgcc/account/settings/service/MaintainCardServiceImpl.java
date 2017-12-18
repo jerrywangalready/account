@@ -35,7 +35,7 @@ public class MaintainCardServiceImpl implements MaintainCardService {
         try {
             //maintainCardDao.checkBalance(param);
             // 如果uuid为空,插入
-            if ("null".equals(param.get("uuid"))) {
+            if ("".equals(param.get("uuid"))) {
                 param.put("uuid",CommUtil.getUUID());
                 maintainCardDao.add(param);
             }else {// 修改
@@ -72,5 +72,10 @@ public class MaintainCardServiceImpl implements MaintainCardService {
         return "success";
     }
 
+    @Override
+    public List<Map<String,String>> queryCardInfoByUuid(String uuid){
+        List<Map<String,String>> list = maintainCardDao.queryCardInfoByUuid(uuid);
+        return list;
+    }
 
 }

@@ -15,4 +15,6 @@ public interface MaintainCardService {
     List<Map<String,String>> getManagerOptions();
 
     String deleteCardInfo(Map<String, String> param);
+
+    List<Map<String,String>> queryCardInfoByUuid(String uuid);
 }

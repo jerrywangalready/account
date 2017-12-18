@@ -15,4 +15,8 @@ public interface MaintainCardDao {
     List<Map<String,String>> getManagerOptions();
 
     void deleteCardInfo(String uuid);
+
+    List<Map<String, String>> getUsers(Map<String, String> param);
+
+    List<Map<String,String>> queryCardInfoByUuid(String uuid);
 }
