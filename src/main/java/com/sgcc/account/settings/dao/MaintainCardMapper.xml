@@ -52,7 +52,7 @@
     </delete>
 
     <select id="queryCardInfoByUuid" resultType="java.util.Map">
-        SELECT t.uuid,t.card_name,u.nickname card_manager,ifnull(b.balance, 0) balance,t.card_color
+        SELECT t.uuid,t.card_name,u.nickname card_manager,ifnull(b.balance, 0) balance
         FROM card_info t
         LEFT JOIN s_users u ON t.card_manager = u.username AND u.isenable = '1'
         LEFT JOIN (SELECT a.card_id,sum(a.balance) balance
@@ -62,6 +62,17 @@
         ) b ON t.card_id = b.card_id
         WHERE t.uuid = #{uuid}
 
+    </select>
+
+    <select id="queryCardUserInfo" resultType="java.util.Map">
+        SELECT t.user_id username,u.nickname,sum(t.balance) balance
+        FROM account_info t
+        LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
+        WHERE t.card_id = (SELECT c.card_id 
+                            FROM card_info c 
+                            WHERE c.uuid = #{uuid}
+                            )
+        GROUP BY t.user_id,u.username
 
     </select>
 

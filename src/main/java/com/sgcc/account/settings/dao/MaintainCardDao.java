@@ -1,5 +1,7 @@
 package com.sgcc.account.settings.dao;
 
+import com.sgcc.comm.model.Query;
+
 import java.util.List;
 import java.util.Map;
 
@@ -18,5 +20,7 @@ public interface MaintainCardDao {
 
     List<Map<String, String>> getUsers(Map<String, String> param);
 
-    List<Map<String,String>> queryCardInfoByUuid(String uuid);
+    Map<String,String> queryCardInfoByUuid(String uuid);
+
+    Query queryCardUserInfo(String uuid);
 }

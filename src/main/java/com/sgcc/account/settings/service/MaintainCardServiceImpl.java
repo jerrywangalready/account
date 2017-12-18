@@ -73,9 +73,14 @@ public class MaintainCardServiceImpl implements MaintainCardService {
     }
 
     @Override
-    public List<Map<String,String>> queryCardInfoByUuid(String uuid){
-        List<Map<String,String>> list = maintainCardDao.queryCardInfoByUuid(uuid);
-        return list;
+    public Map<String,String> queryCardInfoByUuid(String uuid){
+        Map<String,String> map = maintainCardDao.queryCardInfoByUuid(uuid);
+        return map;
+    }
+
+    @Override
+    public Query queryCardUserInfo(String uuid){
+        return maintainCardDao.queryCardUserInfo(uuid);
     }
 
 }

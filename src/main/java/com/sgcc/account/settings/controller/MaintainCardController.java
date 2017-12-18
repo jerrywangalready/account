@@ -35,7 +35,8 @@ public class MaintainCardController {
 
     @RequestMapping("/maintainCardDetail")
     public String maintainCardDetail(String uuid,Model model){
-        model.addAttribute("uuid",uuid);
+        Map<String,String> map = maintainCardService.queryCardInfoByUuid(uuid);
+        model.addAllAttributes(map);
         return "/settings/maintainCard_detail";
     }
 
@@ -58,10 +59,10 @@ public class MaintainCardController {
         return "/settings/changeCardInfo";
     }
 
-    @RequestMapping ("/queryCardInfoByUuid")
-    public @ResponseBody List<Map<String,String>> queryCardInfoByUuid(String uuid){
+    /*@RequestMapping ("/queryCardInfoByUuid")
+    public @ResponseBody List<Map<String,String> queryCardInfoByUuid(String uuid){
         return maintainCardService.queryCardInfoByUuid(uuid);
-    }
+    }*/
 
     @RequestMapping("/save")
     public @ResponseBody String save(@RequestBody Map<String, String> param) {
@@ -95,7 +96,10 @@ public class MaintainCardController {
         return maintainCardService.deleteCardInfo(param);
     }
 
-
+    @RequestMapping("/queryCardUserInfo")
+    public  @ResponseBody Query queryCardUserInfo(String uuid){
+        return maintainCardService.queryCardUserInfo(uuid);
+    }
 
 
 
