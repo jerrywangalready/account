@@ -101,6 +101,10 @@ public class MaintainCardController {
         return maintainCardService.queryCardUserInfo(uuid);
     }
 
+    @RequestMapping("/getUserInfoByUserId")
+    public @ResponseBody Map<String,String> getUserInfoByUserId(String userId){
+        return maintainCardService.getUserInfoByUserId(userId);
+    }
 
 
 }

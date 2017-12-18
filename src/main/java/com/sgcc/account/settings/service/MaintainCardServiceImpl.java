@@ -83,4 +83,8 @@ public class MaintainCardServiceImpl implements MaintainCardService {
         return maintainCardDao.queryCardUserInfo(uuid);
     }
 
+    @Override
+    public Map<String,String> getUserInfoByUserId(String userId){
+        return maintainCardDao.getUserInfoByUserId(userId);
+    }
 }

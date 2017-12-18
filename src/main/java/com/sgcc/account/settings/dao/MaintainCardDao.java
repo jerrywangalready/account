@@ -23,4 +23,6 @@ public interface MaintainCardDao {
     Map<String,String> queryCardInfoByUuid(String uuid);
 
     Query queryCardUserInfo(String uuid);
+
+    Map<String,String> getUserInfoByUserId(String userId);
 }

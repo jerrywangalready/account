@@ -75,5 +75,12 @@
         GROUP BY t.user_id,u.username
 
     </select>
+    
+    <select id="getUserInfoByUserId" resultType="java.util.Map">
+        SELECT t.user_id username,u.nickname,sum(t.balance) balance
+        FROM account_info t
+        LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
+        WHERE t.user_id = #{username}
+    </select>
 
 </mapper>
