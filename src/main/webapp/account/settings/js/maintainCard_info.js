@@ -22,9 +22,7 @@ maintainCard_info.js.query = function(){
         contentType:'application/json',
         data:JSON.stringify(collector),
         success:function (data) {
-            console.info(data);
             var html = template('demo_cards',{'list':data});
-            console.info(html);
             $("#table_div").html(html);
             //初始化页码按钮
             //$("#page-bar").page(data);
@@ -40,7 +38,7 @@ maintainCard_info.js.addCard = function () {
         title:" 新增饭卡",
         area:['375px','280px'],
         scrollbar:false,
-        content:[path + '/maintainCard_info/addCardInfo.do', 'no']
+        content:[path + '/maintainCard/addCardInfo.do', 'no']
     });
 };
 
@@ -62,8 +60,6 @@ maintainCard_info.js.changeCard = function(uuid){
 maintainCard_info.js.deleteCard = function (uuid) {
     var param = {};
     param.uuid = uuid;
-    console.info(param);
-
     $.ajax({
         type:'POST',
         url:path+"/maintainCard_info/deleteCardInfo.do",

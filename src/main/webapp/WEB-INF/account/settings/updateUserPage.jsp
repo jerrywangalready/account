@@ -6,7 +6,7 @@
 <div class="layer_box">
     <form id="main_form">
         <div class="form-group">
-            <label for="username">用户名</label>
+            <label for="username">账号</label>
             <span class="form-control" id="username" name="username" >${username}</span>
             <input type="hidden" name="uuid" value="${uuid}">
         </div>

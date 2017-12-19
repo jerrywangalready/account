@@ -7,7 +7,6 @@ $(function () {
 addCardInfo.js = {};
 
 addCardInfo.js.init = function () {
-    console.info("123");
     // 初始化查询项(必须先初始化字典表)
 
     //$("#cardManager").dict({table:"s_users",key:"username",value:"nickname"});

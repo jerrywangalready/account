@@ -6,7 +6,7 @@
 <div class="layer_box">
     <form id="main_form">
         <div class="form-group">
-            <label for="username">用户名</label>
+            <label for="username">账号</label>
             <input type="text" class="form-control" id="username" name="username" placeholder="登录时所用账号" validate="required,length[1-25],addUserPage.js.checkUsername()">
         </div>
         <div class="form-group">
