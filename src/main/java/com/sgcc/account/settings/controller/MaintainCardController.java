@@ -97,8 +97,8 @@ public class MaintainCardController {
     }
 
     @RequestMapping("/queryCardUserInfo")
-    public  @ResponseBody Query queryCardUserInfo(String uuid){
-        return maintainCardService.queryCardUserInfo(uuid);
+    public  @ResponseBody Query queryCardUserInfo(@RequestBody Map<String,String> param){
+        return maintainCardService.queryCardUserInfo(param);
     }
 
     @RequestMapping("/getUserInfoByUserId")

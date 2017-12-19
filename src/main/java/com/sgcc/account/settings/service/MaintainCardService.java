@@ -18,7 +18,7 @@ public interface MaintainCardService {
 
     Map<String,String> queryCardInfoByUuid(String uuid);
 
-    Query queryCardUserInfo(String uuid);
+    Query queryCardUserInfo(Map<String,String> param);
 
     Map<String,String> getUserInfoByUserId(String userId);
 }

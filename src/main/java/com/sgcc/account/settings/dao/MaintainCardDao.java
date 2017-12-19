@@ -22,7 +22,7 @@ public interface MaintainCardDao {
 
     Map<String,String> queryCardInfoByUuid(String uuid);
 
-    Query queryCardUserInfo(String uuid);
+    List<Map<String, String>> queryCardUserInfo(Map<String,String> param);
 
     Map<String,String> getUserInfoByUserId(String userId);
 }
