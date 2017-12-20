@@ -1,5 +1,7 @@
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../../comm/head.jsp"%>
+<%
+    String path = request.getContextPath();
+%>
 <link href="<%=path%>/account/settings/css/addCardInfo.css" type="text/css" rel="stylesheet">
 <link href="<%=path%>/account/settings/css/maintainCard.css" type="text/css" rel="stylesheet">
 <link href="<%=path%>/account/settings/css/maintainCard_detail.css" type="text/css" rel="stylesheet">
