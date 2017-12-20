@@ -25,9 +25,9 @@
                         <div class="card_owner_big">
                             <span style="float:left;height: 15px;font-size: 21px;margin-top: 3px;">卡主 : </span>
                             <div style="float:left;margin-left: 5px;">
-                                <select type="text" id="cardManager" class="form-control cardManager" data-live-search="true"></select>
+                                <select type="text" id="cardManager" name="cardManager" class="form-control cardManager" data-live-search="true"></select>
                             </div>
-                            <button type="button" class="btn btn-success full_button" onclick="addCardInfo.js.save()">保存</button>
+                            <button type="button" class="btn btn-success full_button" onclick="maintainCard_detail.js.save()">保存</button>
                         </div>
                     </div>
                 </div>
@@ -41,8 +41,8 @@
             </div>
         </div>
     </div>
-    <hr>
-    <div class="mb_15" style="margin-top:7px;">
+    <hr group="search" style="display: none;">
+    <div group="search" class="mb_15" style="margin-top:7px;display: none;">
         <form id="query_box" class="form-inline row" role="form">
             <div class="form-group col-md-4">
                 <input type="text" class="form-control" id="queryCode" name="queryCode" placeholder="账号" >
@@ -61,7 +61,7 @@
     </nav>
 
 </div>
-<script id="users_info" type="text/html">
+<script id="member_grid" type="text/html">
     <table class="table border_solid table-hover">
         <thead>
         <tr>

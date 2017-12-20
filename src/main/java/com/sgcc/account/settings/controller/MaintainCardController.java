@@ -35,7 +35,12 @@ public class MaintainCardController {
 
     @RequestMapping("/maintainCardDetail")
     public String maintainCardDetail(String uuid,Model model){
-        Map<String,String> map = maintainCardService.queryCardInfoByUuid(uuid);
+        Map<String, String> map = new HashMap<>();
+        if("new".equals(uuid)){
+            map.put("card_color",String.valueOf((int)(Math.random()*10)));
+        }else {
+            map = maintainCardService.queryCardInfoByUuid(uuid);
+        }
         model.addAllAttributes(map);
         return "/settings/maintainCard_detail";
     }
@@ -80,12 +85,7 @@ public class MaintainCardController {
     @RequestMapping("/getManagerOptions")
     public @ResponseBody
     List<Map<String, String>> getManagerOptions(){
-        List<Map<String, String>> list = maintainCardService.getManagerOptions();
-        Map<String, String> param = new HashMap<>();
-        param.put("username","");
-        param.put("nickname", "无");
-        list.add(0, param);
-        return list;
+        return maintainCardService.getManagerOptions();
     }
 
     @RequestMapping("/deleteCardInfo")

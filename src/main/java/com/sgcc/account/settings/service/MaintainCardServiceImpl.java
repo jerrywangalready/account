@@ -42,7 +42,7 @@ public class MaintainCardServiceImpl implements MaintainCardService {
                 maintainCardDao.upd(param);
             }
 
-            return "success";
+            return param.get("uuid");
         } catch (Exception e) {
             e.printStackTrace();
             return "false";

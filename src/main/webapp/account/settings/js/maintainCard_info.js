@@ -33,13 +33,14 @@ maintainCard_info.js.query = function(){
 
 //增加
 maintainCard_info.js.addCard = function () {
-    layer.open({
-        type:2,
-        title:" 新增饭卡",
-        area:['375px','280px'],
-        scrollbar:false,
-        content:[path + '/maintainCard/addCardInfo.do', 'no']
-    });
+    // layer.open({
+    //     type:2,
+    //     title:" 新增饭卡",
+    //     area:['375px','280px'],
+    //     scrollbar:false,
+    //     content:[path + '/maintainCard/addCardInfo.do', 'no']
+    // });
+    comm.js.hashAppand("mc","new");
 };
 
 //修改

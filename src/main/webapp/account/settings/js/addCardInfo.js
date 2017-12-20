@@ -25,10 +25,10 @@ addCardInfo.js.init = function () {
 
 addCardInfo.js.save = function () {
     var param = $("#main_form").validate();
-    var managerName = $("#cardManager").val();
-    param.cardManager = managerName;
-    var cardColor = $("#cardColor").val();
-    param.cardColor = cardColor;
+    // var managerName = $("#cardManager").val();
+    // param.cardManager = managerName;
+    // var cardColor = $("#cardColor").val();
+    // param.cardColor = cardColor;
     console.info(param);
 
     $.ajax({
