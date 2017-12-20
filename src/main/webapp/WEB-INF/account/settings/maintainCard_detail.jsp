@@ -14,14 +14,14 @@
         <div class="left">
             <form role="form" id="main_form" style="padding: 16px;">
                 <input type="hidden" id="uuid" name="uuid" value="${uuid}">
-                <input type="hidden" id="cardColor" name="cardColor" value="1">
-                <div class="card_big card_color1">
+                <input type="hidden" id="cardColor" name="cardColor" value="${card_color}">
+                <div class="card_big card_color${card_color}">
                     <div class="">
                         <div class="left" style="width: 100%;">
                             <span class="card_title_span left">${card_name}</span>
                             <input class="form-control" placeholder="饭卡名称" style="display: none;" id="cardName" name="cardName" value="${card_name}" validate="required,length[0-50]">
                         </div>
-                        <div class="card_balance_big">￥0</div>
+                        <div class="card_balance_big">￥${balance}</div>
                         <div class="card_owner_big">
                             <span style="float:left;height: 15px;font-size: 21px;margin-top: 3px;">卡主 : </span>
                             <div style="float:left;margin-left: 5px;">
@@ -85,9 +85,9 @@
             <td>{{value.nickname}}</td>
             <td>{{value.balance}}</td>
             <td>
-                <a class="glyphicon glyphicon-yen table_oper_button" onclick="manageAccount.js.updateUserInfo('{{value.username}}')"></a>
-                <a class="glyphicon glyphicon-menu-hamburger table_oper_button" onclick="manageAccount.js.updateUserInfo('{{value.username}}')"></a>
-                <a class="glyphicon glyphicon-remove table_oper_button" style="display: none;" onclick="manageAccount.js.removeUser('{{value.username}}')"></a>
+                <a class="glyphicon glyphicon-yen table_oper_button" onclick="maintainCard_detail.js.updateUserInfo('{{value.username}}')"></a>
+                <a class="glyphicon glyphicon-menu-hamburger table_oper_button" onclick="maintainCard_detail.js.updateUserInfo('{{value.username}}')"></a>
+                <a class="glyphicon glyphicon-remove table_oper_button" style="display: none;" onclick="maintainCard_detail.js.removeUser('{{value.username}}')"></a>
             </td>
         </tr>
         {{/each}}

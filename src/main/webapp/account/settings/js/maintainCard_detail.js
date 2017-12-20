@@ -29,7 +29,7 @@ maintainCard_detail.js.queryGrid = function () {
         data:JSON.stringify(collector),
         success:function (data) {
             console.info(data)
-            var html = template('users_grid',{'list':data.list});
+            var html = template('users_info',{'list':data.list});
             $("#table_div").html(html);
             // 初始化页码按钮
             $("#page-bar").page(data);
@@ -48,3 +48,10 @@ maintainCard_detail.js.forBack = function () {
     comm.js.hashRemove("mc")
 };
 
+maintainCard_detail.js.updateUserInfo = function (userId) {
+
+};
+
+maintainCard_detail.js.removeUser = function (userId) {
+
+};
