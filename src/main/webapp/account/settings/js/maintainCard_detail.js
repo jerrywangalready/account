@@ -19,9 +19,12 @@ maintainCard_detail.js.init = function(){
 
 maintainCard_detail.js.queryGrid = function () {
     var collector = $("#query_box").collector();
+    var uuid = $("#uuid").val();
+    collector.uuid = uuid;
+    console.info(collector);
     $.ajax({
         type:'POST',
-        url:path+"/manageAccount/queryList.do",
+        url:path+"/maintainCard/queryCardUserInfo.do",
         contentType:'application/json',
         data:JSON.stringify(collector),
         success:function (data) {

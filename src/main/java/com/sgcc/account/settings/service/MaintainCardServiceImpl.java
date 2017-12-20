@@ -79,8 +79,15 @@ public class MaintainCardServiceImpl implements MaintainCardService {
     }
 
     @Override
-    public Query queryCardUserInfo(String uuid){
-        return maintainCardDao.queryCardUserInfo(uuid);
+    public Query queryCardUserInfo(Map<String,String> param){
+        PageHelper.startPage(Integer.parseInt(param.get("pageNum")),Integer.parseInt(param.get("pageSize")));
+        List<Map<String, String>> list = maintainCardDao.queryCardUserInfo(param);
+        Query query = new Query();
+        query.setList(list);
+        query.setPageNum(Integer.parseInt(param.get("pageNum")));
+        query.setPageSize(Integer.parseInt(param.get("pageSize")));
+        query.setTotal(((Page)list).getTotal());
+        return query;
     }
 
     @Override

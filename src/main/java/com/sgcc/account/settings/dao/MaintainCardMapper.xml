@@ -72,7 +72,13 @@
                             FROM card_info c 
                             WHERE c.uuid = #{uuid}
                             )
-        GROUP BY t.user_id,u.username
+        <if test="queryCode != null and queryCode != ''">
+            AND t.user_id like CONCAT('%',#{queryCode},'%')
+        </if>
+        <if test="queryName != null and queryName != ''">
+            AND u.nickname like CONCAT('%',#{queryName},'%')
+        </if>
+        GROUP BY t.user_id,u.nickname
 
     </select>
     

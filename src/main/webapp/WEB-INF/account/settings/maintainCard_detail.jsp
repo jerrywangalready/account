@@ -13,7 +13,7 @@
     <div class="left" style="width: 100%">
         <div class="left">
             <form role="form" id="main_form" style="padding: 16px;">
-                <input type="hidden" id="uuid" name="uuid" value="">
+                <input type="hidden" id="uuid" name="uuid" value="${uuid}">
                 <input type="hidden" id="cardColor" name="cardColor" value="1">
                 <div class="card_big card_color1">
                     <div class="">
@@ -61,7 +61,7 @@
     </nav>
 
 </div>
-<script id="users_grid" type="text/html">
+<script id="users_info" type="text/html">
     <table class="table border_solid table-hover">
         <thead>
         <tr>
