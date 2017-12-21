@@ -3,7 +3,7 @@
 <link href="<%=path%>/account/settings/css/addCardInfo.css" type="text/css" rel="stylesheet">
 <link href="<%=path%>/account/settings/css/maintainCard.css" type="text/css" rel="stylesheet">
 
-<script type="text/javascript" src="<%=path%>/account/settings/js/addCardInfo.js" ></script>
+<script type="text/javascript" src="<%=path%>/account/settings/js/entrance.js" ></script>
 
 <div class="col-md-3" style="margin-top: 7px;" >
     <form role="form" id="main_form" style="padding: 16px;">

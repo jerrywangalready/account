@@ -1,6 +1,5 @@
 package com.sgcc.account.settings.controller;
 
-import com.sgcc.account.index.model.ConsumeRecord;
 import com.sgcc.account.settings.service.MaintainCardService;
 import com.sgcc.comm.model.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,12 +47,10 @@ public class MaintainCardController {
         return maintainCardService.queryList(param);
     }
 
-    @RequestMapping("addCardInfo")
-    public String addCardInfo(String uuid, Model model){
+    @RequestMapping("entrance")
+    public String entrance(String uuid, Model model){
         model.addAttribute("uuid",uuid);
-        int n = (int) (Math.random()*10);
-        model.addAttribute("cardColor",n);
-        return "/settings/addCardInfo";
+        return "settings/entrance";
     }
 
     @RequestMapping("/changeCardInfo")

@@ -7,10 +7,10 @@ $(function () {
 settings.js = {};
 
 settings.js.init = function () {
-
+    var obj = getParameter(location.hash, "obj", "");
     $(".left-box li").click(function () {
         var labelName = $(this).attr("labelName");
-        comm.js.hashAppand("ln",labelName);
+        setHash("#on=settings/init&obj="+obj+"&ln="+labelName);
     });
     // 获取登录用户权限
     $.post(path+"/settings/getRole.do",{},function (data) {
@@ -30,8 +30,4 @@ settings.js.init = function () {
 
     $(".left-box li[labelName="+label+"]").addClass("cur-li");
     
-};
-
-settings.js.test =function(uuid){
-    alert("ojojojj");
 };

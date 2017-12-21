@@ -12,14 +12,6 @@ changePassword.js.init = function () {
 
     });
 
-    $.post(path+'/settings/getLiveOptions.do',{},function (data) {
-        for(var i=0;i<data.length;i++){
-            $("#demo").append("<option value='"+data[i].key+"'>"+data[i].value+"</option>")
-
-        }
-        $("#demo").selectpicker("refresh");
-    });
-
 };
 
 changePassword.js.checkPassword = function() {

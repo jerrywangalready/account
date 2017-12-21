@@ -25,6 +25,5 @@
             <button type="button" style="width: 100%;" class="btn btn-primary full_button" onclick="changePassword.js.save()">保存</button>
         </div>
         <br>
-        <select type="text" id="demo" class="form-control" data-live-search="true"></select>
     </form>
 </div>

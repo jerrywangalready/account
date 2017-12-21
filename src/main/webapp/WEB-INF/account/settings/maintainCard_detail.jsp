@@ -24,7 +24,7 @@
                         <div class="card_balance_big">￥${balance}</div>
                         <div class="card_owner_big">
                             <span style="float:left;height: 15px;font-size: 21px;margin-top: 3px;">卡主 : </span>
-                            <div id="cardManagerNameDiv" style="float: left;padding: 8px 10px;font-size: 14px;">
+                            <div id="cardManagerNameDiv" style="float: left;padding: 4px 10px;font-size: 19px;">
                                 <span >${card_manager}</span>
                             </div>
                             <div id="cardManagerSelectDiv" style="float:left;margin-left: 5px;display: none">
@@ -37,10 +37,11 @@
             </form>
         </div>
         <div class="right">
-            <div style="margin-top:190px">
-                <a id="updateButton" class="glyphicon glyphicon-pencil" style="display: none;" onclick="maintainCard_detail.js.forUpdate()"></a>
-                <a id="deleteButton" class="glyphicon glyphicon-trash" style="display: none;" onclick="maintainCard_detail.js.forDeleteCard('${uuid}')"></a>
-                <a id="backButton" class="glyphicon glyphicon-log-out" onclick="maintainCard_detail.js.forBack()"></a>
+            <div class="button_box">
+                <a id="entranceButton" title="增加成员" class="glyphicon glyphicon-user" style="display: none;" onclick="maintainCard_detail.js.entrance()"></a>
+                <a id="updateButton" title="修改" class="glyphicon glyphicon-pencil" style="display: none;" onclick="maintainCard_detail.js.forUpdate()"></a>
+                <a id="deleteButton" title="删除卡" class="glyphicon glyphicon-trash" style="display: none;" onclick="maintainCard_detail.js.forDeleteCard('${uuid}')"></a>
+                <a id="backButton" title="返回" class="glyphicon glyphicon-log-out" onclick="maintainCard_detail.js.forBack()"></a>
             </div>
         </div>
     </div>

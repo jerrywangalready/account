@@ -1,12 +1,12 @@
-jQuery.namespace("addCardInfo");
+jQuery.namespace("entrance");
 $(function () {
 
-    addCardInfo.js.init();
+    entrance.js.init();
 });
 
-addCardInfo.js = {};
+entrance.js = {};
 
-addCardInfo.js.init = function () {
+entrance.js.init = function () {
     // 初始化查询项(必须先初始化字典表)
 
     //$("#cardManager").dict({table:"s_users",key:"username",value:"nickname"});
@@ -23,13 +23,8 @@ addCardInfo.js.init = function () {
 
 
 
-addCardInfo.js.save = function () {
+entrance.js.save = function () {
     var param = $("#main_form").validate();
-    // var managerName = $("#cardManager").val();
-    // param.cardManager = managerName;
-    // var cardColor = $("#cardColor").val();
-    // param.cardColor = cardColor;
-    console.info(param);
 
     $.ajax({
         type:'POST',

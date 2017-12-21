@@ -49,6 +49,12 @@ public class MaintainCardServiceImpl implements MaintainCardService {
         }
     }
 
+    /**
+     * @Description
+     * @author JerryWang
+     * @date 2017/12/21 20:47
+     * @return
+     */
     @Override
     public List<Map<String,String>> getManagerOptions(){
          List<Map<String,String>> list = maintainCardDao.getManagerOptions();

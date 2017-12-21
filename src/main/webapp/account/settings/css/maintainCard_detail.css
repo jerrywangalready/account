@@ -3,3 +3,12 @@
     font-size: 24px;
     color: #fff;
 }
+
+.button_box {
+    margin-top:190px;
+    font-size: 20px;
+}
+
+.button_box a {
+    margin-left: 5px;
+}

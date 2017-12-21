@@ -23,6 +23,7 @@ maintainCard_detail.js.init = function(){
         $("[group=search]").show();
         $("#updateButton").show();
         $("#deleteButton").show();
+        $("#entranceButton").show();
         maintainCard_detail.js.queryGrid();
     }
 
@@ -51,7 +52,6 @@ maintainCard_detail.js.forUpdate = function () {
     $("#cardName").show().focus();
     $("#cardManagerSelectDiv").show();
     $("#saveButton").show();
-
 };
 maintainCard_detail.js.forDeleteCard = function (uuid) {
     layer.confirm("确认删除此张饭卡?", function (index) {
@@ -91,4 +91,14 @@ maintainCard_detail.js.updateUserInfo = function (userId) {
 
 maintainCard_detail.js.removeUser = function (userId) {
 
+};
+
+maintainCard_detail.js.entrance = function () {
+    layer.open({
+        type:2,
+        title:"增加成员",
+        area:['375px','280px'],
+        scrollbar:false,
+        content:[path + '/maintainCard/entrance.do', 'no']
+    });
 };
