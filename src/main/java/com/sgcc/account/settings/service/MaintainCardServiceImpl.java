@@ -69,7 +69,7 @@ public class MaintainCardServiceImpl implements MaintainCardService {
             e.printStackTrace();
             return "false";
         }
-        return "success";
+        return "true";
     }
 
     @Override

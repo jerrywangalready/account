@@ -5,10 +5,15 @@
 <mapper namespace="com.sgcc.account.settings.dao.MaintainCardDao">
 
     <select id="queryList" resultType="java.util.Map">
-        SELECT t.uuid,t.card_name,u.nickname card_manager,ifnull(b.balance, 0) balance,t.card_color
-        FROM card_info t
-        LEFT JOIN s_users u ON t.card_manager = u.username AND u.isenable = '1'
-        LEFT JOIN (SELECT a.card_id,sum(a.balance) balance
+        SELECT
+            t.uuid,
+            t.card_name,
+            u.nickname card_manager,
+            ifnull(b.balance, 0) balance,
+            t.card_color
+          FROM card_info t
+          LEFT JOIN s_users u ON t.card_manager = u.username AND u.isenable = '1'
+          LEFT JOIN (SELECT a.card_id,sum(a.balance) balance
                       FROM account_info a
                     LEFT JOIN card_info c on a.card_id = c.card_id
                     GROUP BY a.card_id
@@ -41,8 +46,8 @@
     <update id="upd">
         UPDATE card_info
         SET
-        card_name = #{cardName, jdbcType = VARCHAR},
-        card_manager = #{cardManager, jdbcType = VARCHAR}
+          card_name = #{cardName, jdbcType = VARCHAR},
+          card_manager = #{cardManager, jdbcType = VARCHAR}
         WHERE uuid = #{uuid};
     </update>
 
@@ -52,26 +57,34 @@
     </delete>
 
     <select id="queryCardInfoByUuid" resultType="java.util.Map">
-        SELECT t.uuid,t.card_name,t.card_manager username,u.nickname card_manager,ifnull(b.balance, 0) balance,t.card_color
+        SELECT
+          t.uuid,
+          t.card_name,
+          t.card_manager       username,
+          u.nickname           card_manager,
+          ifnull(b.balance, 0) balance,
+          t.card_color
         FROM card_info t
-        LEFT JOIN s_users u ON t.card_manager = u.username AND u.isenable = '1'
-        LEFT JOIN (SELECT a.card_id,sum(a.balance) balance
-        FROM account_info a
-        LEFT JOIN card_info c on a.card_id = c.card_id
-        GROUP BY a.card_id
-        ) b ON t.card_id = b.card_id
+          LEFT JOIN s_users u ON t.card_manager = u.username AND u.isenable = '1'
+          LEFT JOIN (SELECT
+                       a.card_id,
+                       sum(a.balance) balance
+                     FROM account_info a
+                       LEFT JOIN card_info c ON a.card_id = c.card_id
+                     GROUP BY a.card_id
+                    ) b ON t.card_id = b.card_id
         WHERE t.uuid = #{uuid}
 
     </select>
 
     <select id="queryCardUserInfo" resultType="java.util.Map">
-        SELECT t.user_id username,u.nickname,sum(t.balance) balance
-        FROM account_info t
-        LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
-        WHERE t.card_id = (SELECT c.card_id 
-                            FROM card_info c 
-                            WHERE c.uuid = #{uuid}
-                            )
+        SELECT
+            t.user_id      username,
+            u.nickname,
+            sum(t.balance) balance
+          FROM account_info t
+          LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
+         WHERE t.card_id = #{uuid}
         <if test="queryCode != null and queryCode != ''">
             AND t.user_id like CONCAT('%',#{queryCode},'%')
         </if>
@@ -83,10 +96,13 @@
     </select>
     
     <select id="getUserInfoByUserId" resultType="java.util.Map">
-        SELECT t.user_id username,u.nickname,sum(t.balance) balance
-        FROM account_info t
-        LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
-        WHERE t.user_id = #{username}
+        SELECT
+            t.user_id username,
+            u.nickname,
+            sum(t.balance) balance
+          FROM account_info t
+          LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
+         WHERE t.user_id = #{username}
     </select>
 
 </mapper>

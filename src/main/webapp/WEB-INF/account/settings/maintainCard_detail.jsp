@@ -24,10 +24,13 @@
                         <div class="card_balance_big">￥${balance}</div>
                         <div class="card_owner_big">
                             <span style="float:left;height: 15px;font-size: 21px;margin-top: 3px;">卡主 : </span>
-                            <div style="float:left;margin-left: 5px;">
-                                <select type="text" id="cardManager" name="cardManager" class="form-control cardManager" data-live-search="true"></select>
+                            <div id="cardManagerNameDiv" style="float: left;padding: 8px 10px;font-size: 14px;">
+                                <span >${card_manager}</span>
                             </div>
-                            <button type="button" class="btn btn-success full_button" onclick="maintainCard_detail.js.save()">保存</button>
+                            <div id="cardManagerSelectDiv" style="float:left;margin-left: 5px;display: none">
+                                <select type="text" id="cardManager" name="cardManager" value="${username}" class="form-control cardManager" data-live-search="true"></select>
+                            </div>
+                            <button type="button" id="saveButton" style="display: none" class="btn btn-success full_button" onclick="maintainCard_detail.js.save()">保存</button>
                         </div>
                     </div>
                 </div>
@@ -35,9 +38,9 @@
         </div>
         <div class="right">
             <div style="margin-top:190px">
-                <a class="glyphicon glyphicon-pencil" onclick="maintainCard_detail.js.forUpdate()"></a>
-                <a class="glyphicon glyphicon-trash"></a>
-                <a class="glyphicon glyphicon-log-out" onclick="maintainCard_detail.js.forBack()"></a>
+                <a id="updateButton" class="glyphicon glyphicon-pencil" style="display: none;" onclick="maintainCard_detail.js.forUpdate()"></a>
+                <a id="deleteButton" class="glyphicon glyphicon-trash" style="display: none;" onclick="maintainCard_detail.js.forDeleteCard('${uuid}')"></a>
+                <a id="backButton" class="glyphicon glyphicon-log-out" onclick="maintainCard_detail.js.forBack()"></a>
             </div>
         </div>
     </div>
