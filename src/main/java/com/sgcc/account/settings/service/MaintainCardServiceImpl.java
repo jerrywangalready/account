@@ -100,4 +100,42 @@ public class MaintainCardServiceImpl implements MaintainCardService {
     public Map<String,String> getUserInfoByUserId(String userId){
         return maintainCardDao.getUserInfoByUserId(userId);
     }
+
+    @Override
+    public Query queryUsersWithOutThisCard(Map<String, String> param) {
+
+        PageHelper.startPage(Integer.parseInt(param.get("pageNum")),Integer.parseInt(param.get("pageSize")));
+        List<Map<String, String>> list = maintainCardDao.queryUsersWithOutThisCard(param);
+        Query query = new Query();
+        query.setList(list);
+        query.setPageNum(Integer.parseInt(param.get("pageNum")));
+        query.setPageSize(Integer.parseInt(param.get("pageSize")));
+        query.setTotal(((Page)list).getTotal());
+
+        return query;
+    }
+
+    /**
+     * @Description 保存成员信息
+     * @author JerryWang
+     * @date 2017/12/23 10:16
+     * @param userId 账号
+     * @param cardId 卡号
+     * @return
+     */
+    @Override
+    public String saveMember(String userId, String cardId) {
+        try {
+            Map<String, String> param = new HashMap<>();
+            param.put("userId", userId);
+            param.put("cardId", cardId);
+            param.put("uuid", CommUtil.getUUID());
+            maintainCardDao.saveAccountInfo(param);
+            return "true";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "false";
+        }
+    }
+
 }

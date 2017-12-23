@@ -21,4 +21,8 @@ public interface MaintainCardService {
     Query queryCardUserInfo(Map<String,String> param);
 
     Map<String,String> getUserInfoByUserId(String userId);
+
+    Query queryUsersWithOutThisCard(Map<String, String> param);
+
+    String saveMember(String userId, String cardId);
 }

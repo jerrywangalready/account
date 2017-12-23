@@ -7,37 +7,41 @@ $(function () {
 entrance.js = {};
 
 entrance.js.init = function () {
-    // 初始化查询项(必须先初始化字典表)
 
-    //$("#cardManager").dict({table:"s_users",key:"username",value:"nickname"});
+    entrance.js.query();
+};
 
-    $.post(path+'/maintainCard/getManagerOptions.do',{},function (data) {
-        for(var i=0;i<data.length;i++){
-            $("#cardManager").append("<option value='"+data[i].username+"'>"+data[i].nickname+"</option>")
-
+entrance.js.query = function () {
+    var collector = $("#query_box").collector();
+    collector.cardId = $("#cardId").val();
+    console.info(collector)
+    $.ajax({
+        type:'POST',
+        url:path+"/maintainCard/queryUsersWithOutThisCard.do",
+        contentType:'application/json',
+        data:JSON.stringify(collector),
+        success:function (data) {
+            console.info(data)
+            var html = template('queryUsersWithOutThisCard_template',{'list':data.list});
+            $("#table_div").html(html);
+            // 初始化页码按钮
+            $("#page-bar").page(data,'noPS');
         }
-        $("#cardManager").selectpicker("refresh");
     });
-
 };
 
 
 
-entrance.js.save = function () {
-    var param = $("#main_form").validate();
-
-    $.ajax({
-        type:'POST',
-        url:path+'/maintainCard/save.do',
-        contentType:'application/json',
-        data:JSON.stringify(param),
-        success:function (uuid) {
-            //$("#uuid").val(uuid);
-          parent.layer.msg("保存成功！");
-          parent.maintainCard.js.init();
-          comm.js.closeLayer();
-        }
-
+entrance.js.save = function (userId) {
+    var cardId = $("#cardId").val();
+    $.post(path + "/maintainCard/saveMember.do",{userId:userId, cardId: cardId},function(data){
+            if(data == 'true'){
+              parent.layer.msg("保存成功！");
+              parent.maintainCard_detail.js.init();
+              comm.js.closeLayer();
+            }else {
+                layer.msg("操作失败,请联系管理员!");
+            }
     });
 
 };

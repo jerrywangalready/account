@@ -38,7 +38,7 @@
         </div>
         <div class="right">
             <div class="button_box">
-                <a id="entranceButton" title="增加成员" class="glyphicon glyphicon-user" style="display: none;" onclick="maintainCard_detail.js.entrance()"></a>
+                <a id="entranceButton" title="增加成员" class="glyphicon glyphicon-user" style="display: none;" onclick="maintainCard_detail.js.entrance('${uuid}')"></a>
                 <a id="updateButton" title="修改" class="glyphicon glyphicon-pencil" style="display: none;" onclick="maintainCard_detail.js.forUpdate()"></a>
                 <a id="deleteButton" title="删除卡" class="glyphicon glyphicon-trash" style="display: none;" onclick="maintainCard_detail.js.forDeleteCard('${uuid}')"></a>
                 <a id="backButton" title="返回" class="glyphicon glyphicon-log-out" onclick="maintainCard_detail.js.forBack()"></a>

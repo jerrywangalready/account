@@ -48,8 +48,8 @@ public class MaintainCardController {
     }
 
     @RequestMapping("entrance")
-    public String entrance(String uuid, Model model){
-        model.addAttribute("uuid",uuid);
+    public String entrance(String cardId, Model model){
+        model.addAttribute("cardId",cardId);
         return "settings/entrance";
     }
 
@@ -58,11 +58,6 @@ public class MaintainCardController {
         model.addAttribute("uuid",uuid);
         return "/settings/changeCardInfo";
     }
-
-    /*@RequestMapping ("/queryCardInfoByUuid")
-    public @ResponseBody List<Map<String,String> queryCardInfoByUuid(String uuid){
-        return maintainCardService.queryCardInfoByUuid(uuid);
-    }*/
 
     @RequestMapping("/save")
     public @ResponseBody String save(@RequestBody Map<String, String> param) {
@@ -101,5 +96,23 @@ public class MaintainCardController {
         return maintainCardService.getUserInfoByUserId(userId);
     }
 
+    @ResponseBody
+    @RequestMapping("/queryUsersWithOutThisCard")
+    public Query queryUsersWithOutThisCard(@RequestBody Map<String, String> param) {
+        return maintainCardService.queryUsersWithOutThisCard(param);
+    }
 
+    /**
+     * @Description 保存成员信息
+     * @author JerryWang
+     * @date 2017/12/23 10:16
+     * @param userId
+     * @param cardId
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("/saveMember")
+    public String saveMember(String userId, String cardId) {
+        return maintainCardService.saveMember(userId, cardId);
+    }
 }

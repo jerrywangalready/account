@@ -105,4 +105,26 @@
          WHERE t.user_id = #{username}
     </select>
 
+    <select id="queryUsersWithOutThisCard" resultType="map">
+        SELECT su.username, su.nickname
+          FROM s_users su
+          LEFT JOIN account_info ai
+            ON ai.user_id = su.username
+               AND ai.card_id = #{cardId}
+        WHERE ai.uuid IS NULL
+    </select>
+    <insert id="saveAccountInfo">
+        insert into account_info (
+        uuid,
+        user_id,
+        card_id,
+        balance
+        ) values (
+        #{uuid},
+        #{userId},
+        #{cardId},
+        0
+        )
+    </insert>
+
 </mapper>

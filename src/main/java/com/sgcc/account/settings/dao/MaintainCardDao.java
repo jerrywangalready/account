@@ -18,11 +18,26 @@ public interface MaintainCardDao {
 
     void deleteCardInfo(String uuid);
 
-    List<Map<String, String>> getUsers(Map<String, String> param);
-
     Map<String,String> queryCardInfoByUuid(String uuid);
 
     List<Map<String, String>> queryCardUserInfo(Map<String,String> param);
 
     Map<String,String> getUserInfoByUserId(String userId);
+
+    /**
+     * @Description 根据卡id获取没有加入该卡的人员
+     * @author JerryWang
+     * @date 2017/12/22 22:38
+     * @param param
+     * @return
+     */
+    List<Map<String, String>> queryUsersWithOutThisCard(Map<String, String> param);
+
+    /**
+     * @Description 插入成员信息
+     * @author JerryWang
+     * @date 2017/12/22 23:00
+     * @param param
+     */
+    void saveAccountInfo(Map<String, String> param);
 }
