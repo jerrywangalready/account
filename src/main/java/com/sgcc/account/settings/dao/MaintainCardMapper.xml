@@ -101,6 +101,8 @@
           FROM account_info t
           LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
          WHERE t.user_id = #{username}
+          AND t.card_id = #{cardId}
+        GROUP BY t.user_id,u.nickname
     </select>
 
     <select id="queryUsersWithOutThisCard" resultType="map">
@@ -125,4 +127,16 @@
         )
     </insert>
 
+    <delete id="removeUser">
+        DELETE FROM account_info
+        WHERE user_id = #{userName}
+        AND card_id = #{cardId}
+    </delete>
+
+    <update id="rechargeSave">
+        UPDATE account_info
+          SET balance = balance + #{rechargeMoney}
+        WHERE card_id = #{cardId}
+         AND user_id = #{userName}
+    </update>
 </mapper>

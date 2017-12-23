@@ -85,12 +85,25 @@ maintainCard_detail.js.save = function () {
     });
 
 };
-maintainCard_detail.js.updateUserInfo = function (userId) {
-
+maintainCard_detail.js.updateUserInfo = function (username) {
+    var cardId = $("#uuid").val();
+    layer.open({
+        type:2,
+        title:"充值",
+        area:['375px','460px'],
+        scrollbar:false,
+        content:[path + '/maintainCard/recharge.do?username='+username+'&cardId='+cardId, 'no']
+    });
 };
 
-maintainCard_detail.js.removeUser = function (userId) {
-
+maintainCard_detail.js.removeUser = function (username) {
+    var cardId = $("#uuid").val();
+    layer.confirm("确认删除吗?", function () {
+        $.post(path + "/maintainCard/removeUser.do",{username:username,cardId:cardId},function(data){
+            layer.msg(data=="true"?"操作成功!":"操作失败!");
+            maintainCard_detail.js.queryGrid();
+        });
+    });
 };
 
 maintainCard_detail.js.entrance = function (cardId) {

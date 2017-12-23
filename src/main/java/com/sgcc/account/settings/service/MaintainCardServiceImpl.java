@@ -97,8 +97,11 @@ public class MaintainCardServiceImpl implements MaintainCardService {
     }
 
     @Override
-    public Map<String,String> getUserInfoByUserId(String userId){
-        return maintainCardDao.getUserInfoByUserId(userId);
+    public Map<String,String> getUserInfoByUserId(String userId,String cardId){
+        Map<String,String> param = new HashMap<>();
+        param.put("username",userId);
+        param.put("cardId",cardId);
+        return maintainCardDao.getUserInfoByUserId(param);
     }
 
     @Override
@@ -136,6 +139,34 @@ public class MaintainCardServiceImpl implements MaintainCardService {
             e.printStackTrace();
             return "false";
         }
+    }
+
+
+    @Override
+    public String removeUser(String userName,String cardId){
+        try{
+            Map<String,String> param = new HashMap<>();
+            param.put("userName",userName);
+            param.put("cardId",cardId);
+            maintainCardDao.removeUser(param);
+            return "true";
+        }catch (Exception e){
+            e.printStackTrace();
+            return "false";
+        }
+
+    }
+
+    @Override
+    public String rechargeSave(Map<String, String> param){
+        try{
+            maintainCardDao.rechargeSave(param);
+            return "true";
+        }catch(Exception e){
+            e.printStackTrace();
+            return "false";
+        }
+
     }
 
 }

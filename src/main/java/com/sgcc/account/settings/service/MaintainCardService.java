@@ -20,9 +20,15 @@ public interface MaintainCardService {
 
     Query queryCardUserInfo(Map<String,String> param);
 
-    Map<String,String> getUserInfoByUserId(String userId);
+    Map<String,String> getUserInfoByUserId(String userId,String cardId);
+
+    String removeUser(String userName,String cardId);
+
+
 
     Query queryUsersWithOutThisCard(Map<String, String> param);
 
     String saveMember(String userId, String cardId);
+
+    String rechargeSave(Map<String, String> param);
 }
