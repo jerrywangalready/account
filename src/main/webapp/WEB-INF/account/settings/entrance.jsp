@@ -14,6 +14,7 @@
             <input type="text" class="form-control" id="queryName" name="queryName" placeholder="名称">
         </div>
     </form>
+    <hr style="margin-top: 1px; margin-bottom: 10px;">
     <div id="table_div">
 
     </div>

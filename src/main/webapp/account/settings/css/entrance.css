@@ -37,5 +37,9 @@
 }
 
 #table_div button {
-    margin: 5px;
+    margin: 5px 0;
+}
+
+#table_div {
+    min-height: 176px;
 }

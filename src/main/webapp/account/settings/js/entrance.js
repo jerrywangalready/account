@@ -3,8 +3,7 @@ $(function () {
 
     entrance.js.init();
 
-    window.hashchange(function () {
-        alert()
+    $(window).hashchange(function () {
         entrance.js.init();
     });
 });
@@ -18,14 +17,12 @@ entrance.js.init = function () {
 entrance.js.query = function () {
     var collector = $("#query_box").collector();
     collector.cardId = $("#cardId").val();
-    console.info(collector)
     $.ajax({
         type:'POST',
         url:path+"/maintainCard/queryUsersWithOutThisCard.do",
         contentType:'application/json',
         data:JSON.stringify(collector),
         success:function (data) {
-            console.info(data)
             var html = template('queryUsersWithOutThisCard_template',{'list':data.list});
             $("#table_div").html(html);
             // 初始化页码按钮
