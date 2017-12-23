@@ -18,8 +18,6 @@
                     LEFT JOIN card_info c on a.card_id = c.card_id
                     GROUP BY a.card_id
                     ) b ON t.card_id = b.card_id
-
-
     </select>
 
     <select id="getManagerOptions" resultType="java.util.Map">
@@ -111,7 +109,7 @@
           LEFT JOIN account_info ai
             ON ai.user_id = su.username
                AND ai.card_id = #{cardId}
-        WHERE ai.uuid IS NULL
+        WHERE ai.uuid IS NULL AND su.username != 'superadmin'
     </select>
     <insert id="saveAccountInfo">
         insert into account_info (

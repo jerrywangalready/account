@@ -1,6 +1,6 @@
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="../../comm/head.jsp"%>
-<link href="<%=path%>/account/settings/css/addCardInfo.css" type="text/css" rel="stylesheet">
+<link href="<%=path%>/account/settings/css/entrance.css" type="text/css" rel="stylesheet">
 <link href="<%=path%>/account/settings/css/maintainCard.css" type="text/css" rel="stylesheet">
 
 <script type="text/javascript" src="<%=path%>/account/settings/js/changeCardInfo.js" ></script>

@@ -2,12 +2,16 @@ jQuery.namespace("entrance");
 $(function () {
 
     entrance.js.init();
+
+    window.hashchange(function () {
+        alert()
+        entrance.js.init();
+    });
 });
 
 entrance.js = {};
 
 entrance.js.init = function () {
-
     entrance.js.query();
 };
 

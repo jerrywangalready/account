@@ -2,7 +2,7 @@
 <%
     String path = request.getContextPath();
 %>
-<link href="<%=path%>/account/settings/css/addCardInfo.css" type="text/css" rel="stylesheet">
+<link href="<%=path%>/account/settings/css/entrance.css" type="text/css" rel="stylesheet">
 <link href="<%=path%>/account/settings/css/maintainCard.css" type="text/css" rel="stylesheet">
 <link href="<%=path%>/account/settings/css/maintainCard_detail.css" type="text/css" rel="stylesheet">
 

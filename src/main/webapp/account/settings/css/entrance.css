@@ -35,3 +35,7 @@
     width: 150px !important;
     margin-right: 4px;
 }
+
+#table_div button {
+    margin: 5px;
+}
