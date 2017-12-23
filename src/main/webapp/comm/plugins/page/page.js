@@ -2,12 +2,16 @@
  * Created by jerrywang on 2017/1/30.
  */
 $.fn.extend({
-    page:function (data) {
+    page:function (data, pageSizeFlag) {
         return this.each(function () {
             var _this = $(this);
 
             _this.addClass("page-bar").attr("aria-label","Page navigation");
-            _this.html("<ul class='pagination pagination-sm left'><li><a>10</a></li><li><a>20</a></li><li><a>50</a></li><li><a>100</a></li></ul><span class='badge    page-bar-total'>"+data.total+"</span>")
+            if(pageSizeFlag == 'noPS'){
+                _this.html("<span class='badge page-bar-total'>"+data.total+"</span>")
+            }else {
+                _this.html("<ul class='pagination pagination-sm left'><li><a>10</a></li><li><a>20</a></li><li><a>50</a></li><li><a>100</a></li></ul><span class='badge    page-bar-total'>"+data.total+"</span>")
+            }
 
             var ul = "<ul class='pagination pagination-sm right'>";
             ul += "<li><a aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>";
