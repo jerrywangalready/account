@@ -52,6 +52,7 @@ maintainCard_detail.js.forUpdate = function () {
     $("#cardName").show().focus();
     $("#cardManagerSelectDiv").show();
     $("#saveButton").show();
+    $(".glyphicon-remove").show();
 };
 maintainCard_detail.js.forDeleteCard = function (uuid) {
     layer.confirm("确认删除此张饭卡?", function (index) {
@@ -97,11 +98,14 @@ maintainCard_detail.js.updateUserInfo = function (username) {
 };
 
 maintainCard_detail.js.removeUser = function (username) {
-    var cardId = $("#uuid").val();
-    layer.confirm("确认删除吗?", function () {
-        $.post(path + "/maintainCard/removeUser.do",{username:username,cardId:cardId},function(data){
-            layer.msg(data=="true"?"操作成功!":"操作失败!");
-            maintainCard_detail.js.queryGrid();
+    layer.confirm("此操作不可恢复，确认删除该成员吗？", function () {
+        var cardId = $("#uuid").val();
+        layer.confirm("确认删除吗?", function () {
+            $.post(path + "/maintainCard/removeUser.do",{username:username,cardId:cardId},function(data){
+                layer.msg(data=="true"?"操作成功!":"操作失败!");
+                //maintainCard_detail.js.queryGrid();
+                maintainCard_detail.js.reFresh();
+            });
         });
     });
 };
@@ -114,4 +118,12 @@ maintainCard_detail.js.entrance = function (cardId) {
         scrollbar:false,
         content:[path + '/maintainCard/entrance.do?cardId='+cardId, 'no']
     });
+};
+
+maintainCard_detail.js.reFresh = function () {
+    var hash = location.hash;
+    var obj = getParameter(hash, "obj", "");
+    var mc = getParameter(hash, "mc", "");
+    var ran = Math.random() * 100000;
+    setHash("#on=settings/init&obj="+obj+"&ln=maintainCard&mc="+mc+"&ran="+ran);
 };

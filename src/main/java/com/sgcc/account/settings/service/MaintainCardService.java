@@ -22,7 +22,7 @@ public interface MaintainCardService {
 
     Map<String,String> getUserInfoByUserId(String userId,String cardId);
 
-    String removeUser(String userName,String cardId);
+    String removeUser(String username,String cardId);
 
 
 

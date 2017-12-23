@@ -143,10 +143,10 @@ public class MaintainCardServiceImpl implements MaintainCardService {
 
 
     @Override
-    public String removeUser(String userName,String cardId){
+    public String removeUser(String username,String cardId){
         try{
             Map<String,String> param = new HashMap<>();
-            param.put("userName",userName);
+            param.put("username",username);
             param.put("cardId",cardId);
             maintainCardDao.removeUser(param);
             return "true";

@@ -31,7 +31,7 @@ recharge.js.save = function () {
         success:function (mes) {
             if (mes =="true"){
                 comm.js.closeLayer();
-                parent.maintainCard_detail.js.queryGrid();
+                parent.maintainCard_detail.js.reFresh();
                 parent.layer.msg("充值成功!");
             }else{
                 layer.msg("充值失败！");

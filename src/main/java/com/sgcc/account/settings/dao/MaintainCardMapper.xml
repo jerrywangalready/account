@@ -111,7 +111,7 @@
           LEFT JOIN account_info ai
             ON ai.user_id = su.username
                AND ai.card_id = #{cardId}
-        WHERE ai.uuid IS NULL AND su.username != 'superadmin'
+        WHERE su.isenable = '1' AND ai.uuid IS NULL AND su.username != 'superadmin'
     </select>
     <insert id="saveAccountInfo">
         insert into account_info (
@@ -129,7 +129,7 @@
 
     <delete id="removeUser">
         DELETE FROM account_info
-        WHERE user_id = #{userName}
+        WHERE user_id = #{username}
         AND card_id = #{cardId}
     </delete>
 

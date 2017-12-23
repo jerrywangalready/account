@@ -112,8 +112,8 @@ public class MaintainCardController {
     }
     @RequestMapping("/removeUser")
     public @ResponseBody
-    String removeUser(String userName, String cardId) {
-        return maintainCardService.removeUser(userName, cardId);
+    String removeUser(String username, String cardId) {
+        return maintainCardService.removeUser(username, cardId);
     }
 
     /**

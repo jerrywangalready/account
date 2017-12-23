@@ -90,7 +90,7 @@
             <td>{{value.balance}}</td>
             <td>
                 <a class="glyphicon glyphicon-yen table_oper_button" onclick="maintainCard_detail.js.updateUserInfo('{{value.username}}')"></a>
-                <a class="glyphicon glyphicon-remove table_oper_button" style="display: none;" onclick="maintainCard_detail.js.removeUser('{{value.username}}')">删除</a>
+                <a class="glyphicon glyphicon-remove table_oper_button" style="display: none;" onclick="maintainCard_detail.js.removeUser('{{value.username}}')"></a>
             </td>
         </tr>
         {{/each}}
