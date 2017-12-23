@@ -101,8 +101,6 @@
           FROM account_info t
           LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
          WHERE t.user_id = #{username}
-          AND t.card_id = #{cardId}
-        GROUP BY t.user_id,u.nickname
     </select>
 
     <select id="queryUsersWithOutThisCard" resultType="map">
@@ -112,6 +110,12 @@
             ON ai.user_id = su.username
                AND ai.card_id = #{cardId}
         WHERE su.isenable = '1' AND ai.uuid IS NULL AND su.username != 'superadmin'
+        <if test="queryCode != null and queryCode != ''">
+            AND su.username like CONCAT('%',#{queryCode},'%')
+        </if>
+        <if test="queryName != null and queryName != ''">
+            AND su.nickname like CONCAT('%',#{queryName},'%')
+        </if>
     </select>
     <insert id="saveAccountInfo">
         insert into account_info (

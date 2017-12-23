@@ -10,7 +10,12 @@
             date_format(s.create_time, '%Y-%m-%d %T') create_time
           FROM s_users s
          WHERE s.isenable = '1'
-
+        <if test="queryCode != null and queryCode != ''">
+            AND s.username like CONCAT('%',#{queryCode},'%')
+        </if>
+        <if test="queryName != null and queryName != ''">
+            AND s.nickname like CONCAT('%',#{queryName},'%')
+        </if>
     </select>
     <select id="checkUsername" resultType="int">
         select count(1) from s_users WHERE username = #{username}

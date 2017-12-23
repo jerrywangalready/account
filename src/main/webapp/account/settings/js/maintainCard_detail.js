@@ -91,7 +91,7 @@ maintainCard_detail.js.updateUserInfo = function (username) {
     layer.open({
         type:2,
         title:"充值",
-        area:['375px','460px'],
+        area:['305px','380px'],
         scrollbar:false,
         content:[path + '/maintainCard/recharge.do?username='+username+'&cardId='+cardId, 'no']
     });

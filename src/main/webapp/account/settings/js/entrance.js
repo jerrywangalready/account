@@ -11,6 +11,10 @@ $(function () {
 entrance.js = {};
 
 entrance.js.init = function () {
+    $("#query_box input").enter(function () {
+        $("#query_box").query();
+    });
+
     entrance.js.query();
 };
 

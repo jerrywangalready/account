@@ -5,6 +5,11 @@ $(function () {
 
 manageAccount.js = {};
 manageAccount.js.init = function () {
+
+    $("#query_box input").enter(function () {
+        $("#query_box").query();
+    });
+
     manageAccount.js.query();
 };
 

@@ -8,7 +8,7 @@
     <input type="hidden" id="cardId" name="cardId" value="${cardId}">
     <form id="query_box" class="form-inline row" role="form">
         <div class="form-group col-md-2">
-            <input type="text" class="form-control" id="queryCode" name="queryCode" placeholder="编号" >
+            <input type="text" class="form-control" id="queryCode" name="queryCode" placeholder="帐号" >
         </div>
         <div class="form-group col-md-2">
             <input type="text" class="form-control" id="queryName" name="queryName" placeholder="名称">

@@ -2,6 +2,7 @@
 <%
     String path = request.getContextPath();
 %>
+<link rel="stylesheet" href="<%=path%>/account/settings/css/manageAccount.css">
 <script type="text/javascript" src="<%=path%>/account/settings/js/manageAccount.js"></script>
 <h3>账号管理</h3>
 <hr>
