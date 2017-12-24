@@ -19,7 +19,7 @@
                     <div class="">
                         <div class="left" style="width: 100%;">
                             <span class="card_title_span left">${card_name}</span>
-                            <input class="form-control" placeholder="饭卡名称" style="display: none;" id="cardName" name="cardName" value="${card_name}" validate="required,length[0-10]">
+                            <input class="form-control" placeholder="饭卡名称" style="display: none;" id="cardName" name="cardName" value="${card_name}" validate="required,length[0-7]">
                         </div>
                         <div class="card_balance_big">￥${balance}</div>
                         <div class="card_owner_big">

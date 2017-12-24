@@ -7,7 +7,6 @@ $(function () {
 changeCardInfo.js = {};
 
 changeCardInfo.js.init = function () {
-    console.info("123");
     //初始化卡片数据
     changeCardInfo.js.query();
 
@@ -27,16 +26,13 @@ changeCardInfo.js.init = function () {
 
 changeCardInfo.js.query = function(){
     var uuid = $("#uuid").val();
-    console.info(uuid);
     $.ajax({
         type:'POST',
         url:path+"/maintainCard/queryCardInfoByUuid.do",
         //contentType:'application/json',
         data:{"uuid":uuid},
         success:function (data) {
-            console.info(data);
             var html = template('demo_cards',{'list':data});
-            console.info(html);
             $("#table_div").html(html);
             //初始化页码按钮
             //$("#page-bar").page(data);
@@ -51,7 +47,6 @@ changeCardInfo.js.save = function () {
     param.cardManager = managerName;
     var cardColor = $("#cardColor").val();
     param.cardColor = cardColor;
-    console.info(param);
 
     $.ajax({
         type:'POST',

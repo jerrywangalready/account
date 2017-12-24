@@ -45,15 +45,6 @@ maintainCard_info.js.addCard = function () {
 
 //修改
 maintainCard_info.js.changeCard = function(uuid){
-/*    console.info("xiugai yemian ");
-    layer.open({
-        type:2,
-        title:" 新增饭卡",
-        area:['500px','450px'],
-        scrollbar:false,
-        content:[path + '/maintainCard_info/changeCardInfo.do?uuid='+uuid, 'no']
-    });*/
-    //comm.js.hashAppand("mc","cardDetail");
     comm.js.hashAppand("mc",uuid);
 };
 

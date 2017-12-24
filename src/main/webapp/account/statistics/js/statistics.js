@@ -22,28 +22,13 @@ statistics.js.query = function () {
 
     collector.cardId = cardId;
 
-    /*var userId = $("#queryCode").val();
-    var userName = $("#queryName").val();
-    collector.userId = userId;
-    collector.userName = userName;*/
-    // $.post(path + "/statistics/queryList.do",{cardId:cardId},function (data) {
-    //     console.info(data);
-    //     var html = template('demo_users',{'list':data.list});
-    //     console.info(html);
-    //     $("#table_div").html(html);
-    //     // 初始化页码按钮
-    //     $("#page-bar").page(data);
-    // });
-    console.info(collector);
     $.ajax({
         type:'POST',
         url:path+"/statistics/queryList.do",
         contentType:'application/json',
         data:JSON.stringify(collector),
         success:function (data) {
-            console.info(data);
             var html = template('demo_users',{'list':data.list});
-            console.info(html);
             $("#table_div").html(html);
             // 初始化页码按钮
             $("#page-bar").page(data);
@@ -57,22 +42,6 @@ statistics.js.detail = function (userId) {
     var collector = $("#query_box").collector();
     collector.cardId = cardId;
 
-    //comm.js.hashAppand("un",userId);
     setHash("on=statistics/detail&obj="+cardId+"&un="+userId);
-
-    /*$.ajax({
-        type:'POST',
-        url:path+"/statistics/queryList.do",
-        contentType:'application/json',
-        data:JSON.stringify(collector),
-        success:function (data) {
-            console.info(data);
-            var html = template('demo_users',{'list':data.list});
-            console.info(html);
-            $("#table_div").html(html);
-            // 初始化页码按钮
-            $("#page-bar").page(data);
-        }
-    });*/
 
 };

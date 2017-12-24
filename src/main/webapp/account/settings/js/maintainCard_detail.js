@@ -114,7 +114,7 @@ maintainCard_detail.js.entrance = function (cardId) {
     layer.open({
         type:2,
         title:"增加成员",
-        area:['375px','410px'],
+        area:['450px','430px'],
         scrollbar:false,
         content:[path + '/maintainCard/entrance.do?cardId='+cardId, 'no']
     });

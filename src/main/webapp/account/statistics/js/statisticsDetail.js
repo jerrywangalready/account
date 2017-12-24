@@ -39,16 +39,13 @@ statisticsDetail.js.query = function () {
     var finishTime = $("#finishTime").val();
     collector.startTime = startTime;
     collector.finishTime = finishTime;*/
-    console.info(collector);
     $.ajax({
         type:'POST',
         url:path+"/statistics/queryDetailList.do",
         contentType:'application/json',
         data:JSON.stringify(collector),
         success:function (data) {
-            console.info(data);
             var html = template('queryList_template',{'list':data.list});
-            console.info(html);
             $("#table_div").html(html);
             // 初始化页码按钮
             $("#page-bar").page(data);

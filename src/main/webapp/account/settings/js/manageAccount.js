@@ -23,7 +23,6 @@ manageAccount.js.query = function () {
         contentType:'application/json',
         data:JSON.stringify(collector),
         success:function (data) {
-            console.info(data)
             var html = template('users_grid',{'list':data.list});
             $("#table_div").html(html);
             // 初始化页码按钮

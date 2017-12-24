@@ -7,7 +7,9 @@ $(function () {
 recharge.js = {};
 
 recharge.js.init = function () {
-
+    $("#rechargeMoney").focus().enter(function () {
+        recharge.js.save();
+    });
 };
 
 recharge.js.validateMoney = function (obj) {
@@ -21,8 +23,6 @@ recharge.js.validateMoney = function (obj) {
 
 recharge.js.save = function () {
     var param = $("#main_form").validate();
-    console.info("save");
-    console.info(param);
     $.ajax({
         type:'POST',
         url:path+'/maintainCard/rechargeSave.do',
