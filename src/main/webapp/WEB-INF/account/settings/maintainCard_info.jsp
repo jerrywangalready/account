@@ -21,9 +21,6 @@
 </div>
 
 <script id="demo_cards" type="text/html">
-    {{if list.length == 0}}
-    <span>未查询到任何数据!</span>
-    {{/if}}
     {{each list as value i}}
         <div class="card card_color{{value.card_color}}">
             <div class="card_title">

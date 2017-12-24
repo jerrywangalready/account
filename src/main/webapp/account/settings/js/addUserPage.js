@@ -5,7 +5,11 @@ $(function () {
 
 addUserPage.js = {};
 addUserPage.js.init = function () {
+    $("#username").focus();
 
+    $("#main_form input").enter(function () {
+        addUserPage.js.save();
+    });
 };
 
 addUserPage.js.save = function () {

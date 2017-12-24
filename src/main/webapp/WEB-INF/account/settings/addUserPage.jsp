@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
             <label for="password">密码</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="登录中使用的密码" validate="required">
+            <input type="password" class="form-control" id="password" name="password" placeholder="登录中使用的密码" validate="required,length[1-25]">
         </div>
         <div class="form-group">
             <label for="rePassword">密码确认</label>
