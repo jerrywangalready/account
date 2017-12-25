@@ -97,10 +97,11 @@
         SELECT
             t.user_id username,
             u.nickname,
-            sum(t.balance) balance
+            t.balance
           FROM account_info t
           LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
          WHERE t.user_id = #{username}
+         AND  t.card_id = #{cardId}
     </select>
 
     <select id="queryUsersWithOutThisCard" resultType="map">
