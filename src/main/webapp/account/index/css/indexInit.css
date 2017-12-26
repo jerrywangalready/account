@@ -43,3 +43,11 @@
 .grey {
     color:#bbb;
 }
+
+.table th,td {
+    text-align: center;
+}
+
+.tal {
+    text-align: left !important;
+}

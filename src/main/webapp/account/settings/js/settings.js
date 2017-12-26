@@ -21,11 +21,11 @@ settings.js.init = function () {
         success:function (data) {
             for(var i=0;i<data.length;i++){
                 if(data[i] == "superadmin"){
-                    $("li[labelName=maintainCard],li[labelName=manageAccount],li[labelName=memberMaintain]").removeClass("hidden");
+                    $("li[labelName=maintainCard],li[labelName=manageAccount]").removeClass("hidden");
                     return false;
                 }
                 if(data[i] == "card_owner"){
-                    $("li[labelName=memberMaintain]").removeClass("hidden");
+                    $("li[labelName=maintainCard]").removeClass("hidden");
                 }
             }
         }

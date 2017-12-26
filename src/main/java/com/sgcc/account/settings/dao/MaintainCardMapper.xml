@@ -144,4 +144,12 @@
         WHERE card_id = #{cardId}
          AND user_id = #{userName}
     </update>
+    <delete id="deleteRole">
+        DELETE FROM p_role_user WHERE role_id = 'card_owner' AND object_code = #{uuid}
+    </delete>
+    <insert id="addRole">
+        insert into p_role_user (
+          uuid, role_id, username, object_code)
+          values (#{pid}, 'card_owner', #{cardManager}, #{uuid})
+    </insert>
 </mapper>

@@ -31,4 +31,6 @@ public interface MaintainCardService {
     String saveMember(String userId, String cardId);
 
     String rechargeSave(Map<String, String> param);
+
+    void grantRole(Map<String, String> param);
 }

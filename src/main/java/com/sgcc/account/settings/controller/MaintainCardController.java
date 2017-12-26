@@ -70,10 +70,16 @@ public class MaintainCardController {
         Map cardInfo = new HashMap();
         String uuid = param.get("uuid");
         String cardName = param.get("cardName");
-        String cardManader = param.get("cardManager");
+        String cardManager = param.get("cardManager");
         cardInfo.put("uuid", uuid);
         cardInfo.put("cardName", cardName);
-        cardInfo.put("cardManader", cardManader);
+        cardInfo.put("cardManager", cardManager);
+
+        // 给卡主分配权限
+        // 如果有卡主,加入角色表
+        if (!param.get("cardManager").isEmpty()) {
+            maintainCardService.grantRole(param);
+        }
 
         return maintainCardService.save(param);
     }

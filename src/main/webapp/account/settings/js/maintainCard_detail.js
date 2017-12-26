@@ -5,7 +5,25 @@ $(function () {
 
 maintainCard_detail.js = {};
 
+maintainCard_detail.js.role = "";
+
 maintainCard_detail.js.init = function(){
+
+    // 获取登录用户权限
+    $.ajax({
+        type:'POST',
+        url:path+'/settings/getRole.do',
+        async: false,
+        data:{},
+        success:function (data) {
+            for(var i=0;i<data.length;i++){
+                if(data[i] == "card_owner"){
+                    maintainCard_detail.js.role = "card_owner";
+                }
+            }
+        }
+
+    });
 
     var mc = getParameter(location.hash, "mc", "");
     var cardManager = $("#cardManager").attr("value");
@@ -22,7 +40,9 @@ maintainCard_detail.js.init = function(){
     }else {
         $("[group=search]").show();
         $("#updateButton").show();
-        $("#deleteButton").show();
+        if(maintainCard_detail.js.role != "card_owner") {
+            $("#deleteButton").show();
+        }
         $("#entranceButton").show();
         maintainCard_detail.js.queryGrid();
     }
@@ -47,12 +67,15 @@ maintainCard_detail.js.queryGrid = function () {
 };
 
 maintainCard_detail.js.forUpdate = function () {
-    $(".card_title_span").hide();
-    $("#cardManagerNameDiv").hide();
-    $("#cardName").show().focus();
-    $("#cardManagerSelectDiv").show();
-    $("#saveButton").show();
-    $(".glyphicon-remove").show();
+    if(maintainCard_detail.js.role != "card_owner"){
+        $(".card_title_span").hide();
+        $("#cardManagerNameDiv").hide();
+        $("#cardName").show().focus();
+        $("#cardManagerSelectDiv").show();
+        $("#saveButton").show();
+    }else {
+        $(".glyphicon-remove").show();
+    }
 };
 maintainCard_detail.js.forDeleteCard = function (uuid) {
     layer.confirm("确认删除此张饭卡?", function (index) {

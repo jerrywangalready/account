@@ -173,9 +173,13 @@ indexInit.js.showMore = function () {
 
 indexInit.js.checkMoney = function (obj) {
     var money = $(obj).val();
-    var reg = new RegExp('^[0-9]+(\\.[0-9]{0,2}){0,1}$');
-    var result = {};
-    result.info = "请输入最多两位小数的正数";
-    result.result = reg.test(money);
-    return result;
+    if(money != ""){
+        var reg = new RegExp('^[0-9]+(\\.[0-9]{0,2}){0,1}$');
+        var result = {};
+        result.info = "请输入最多两位小数的正数";
+        result.result = reg.test(money);
+        return result;
+    }else {
+        return {result:true, info:""};
+    }
 };

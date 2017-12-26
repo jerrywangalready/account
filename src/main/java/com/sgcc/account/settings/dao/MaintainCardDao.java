@@ -46,4 +46,8 @@ public interface MaintainCardDao {
     void removeUser(Map<String, String> param);
 
     void rechargeSave(Map<String, String> param);
+
+    void deleteRole(Map<String, String> param);
+
+    void addRole(Map<String, String> param);
 }

@@ -103,12 +103,12 @@
     <table class="table border_solid table-hover">
         <thead>
         <tr>
-            <th>记账日期</th>
-            <th>早餐</th>
-            <th>午餐</th>
-            <th>晚餐</th>
-            <th>其它</th>
-            <th>备注</th>
+            <th width="20%">记账日期</th>
+            <th width="10%">早餐</th>
+            <th width="10%">午餐</th>
+            <th width="10%">晚餐</th>
+            <th width="10%">其它</th>
+            <th width="40%">备注</th>
         </tr>
         </thead>
         <tbody>
@@ -124,7 +124,7 @@
             <td {{if value.lunch == '0'}} class="grey" {{/if}}>{{value.lunch}}</td>
             <td {{if value.dinner == '0'}} class="grey" {{/if}}>{{value.dinner}}</td>
             <td {{if value.other == '0'}} class="grey" {{/if}}>{{value.other}}</td>
-            <td>{{value.remark}}</td>
+            <td class="tal">{{value.remark}}</td>
         </tr>
         {{/each}}
         </tbody>

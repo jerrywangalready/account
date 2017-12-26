@@ -45,18 +45,18 @@
             </div>
         </div>
     </div>
-    <hr group="search" style="display: none;">
-    <div group="search" class="mb_15" style="margin-top:7px;display: none;">
-        <form id="query_box" class="form-inline row" role="form">
-            <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="queryCode" name="queryCode" placeholder="账号" >
-            </div>
-            <div class="form-group col-md-4">
-                <input type="text" class="form-control" id="queryName" name="queryName" placeholder="昵称">
-            </div>
+    <%--<hr group="search" style="display: none;">--%>
+    <%--<div group="search" class="mb_15" style="margin-top:7px;display: none;">--%>
+        <%--<form id="query_box" class="form-inline row" role="form">--%>
+            <%--<div class="form-group col-md-4">--%>
+                <%--<input type="text" class="form-control" id="queryCode" name="queryCode" placeholder="账号" >--%>
+            <%--</div>--%>
+            <%--<div class="form-group col-md-4">--%>
+                <%--<input type="text" class="form-control" id="queryName" name="queryName" placeholder="昵称">--%>
+            <%--</div>--%>
 
-        </form>
-    </div>
+        <%--</form>--%>
+    <%--</div>--%>
     <hr>
     <div id="table_div">
 

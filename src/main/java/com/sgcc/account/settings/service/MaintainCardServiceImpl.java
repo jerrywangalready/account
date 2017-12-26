@@ -169,4 +169,13 @@ public class MaintainCardServiceImpl implements MaintainCardService {
 
     }
 
+    @Override
+    public void grantRole(Map<String, String> param) {
+        // 删除该卡原卡主权限
+        maintainCardDao.deleteRole(param);
+        // 插入新卡主权限
+        param.put("pid", CommUtil.getUUID());
+        maintainCardDao.addRole(param);
+    }
+
 }
