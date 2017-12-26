@@ -2,6 +2,7 @@ package com.sgcc.account.statistics.controller;
 
 import com.sgcc.account.statistics.service.StatisticsService;
 import com.sgcc.comm.model.Query;
+import com.sgcc.comm.util.service.CommService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +18,8 @@ import java.util.Map;
 public class StatisticsController {
 
     @Autowired
+    CommService commService;
+    @Autowired
     StatisticsService statisticsService;
 
     @RequestMapping("/init")
@@ -31,6 +34,8 @@ public class StatisticsController {
 
     @RequestMapping("/queryList")
     public @ResponseBody Query queryList(@RequestBody Map<String, String> param) {
+       String loginUserName = commService.getLoginInfo().getLoginUser();
+       param.put("loginUserName",loginUserName);
         return statisticsService.queryList(param);
     }
 

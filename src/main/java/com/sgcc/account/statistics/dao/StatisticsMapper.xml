@@ -10,7 +10,10 @@
           from account_info t
           LEFT JOIN s_users u ON t.user_id = u.username AND u.isenable = '1'
           LEFT JOIN consume_record c ON t.card_id = c.card_id AND t.user_id = c.user_id
-         where t.card_id = #{cardId}
+         where 1 = 1
+        <if test="loginUserName != 'superadmin' ">
+            AND  t.card_id = #{cardId}
+        </if>
         <if test="queryCode != null and queryCode != ''">
             AND t.user_id like CONCAT('%',#{queryCode},'%')
         </if>
