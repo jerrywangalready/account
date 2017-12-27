@@ -2,6 +2,7 @@ package com.sgcc.account.settings.controller;
 
 import com.sgcc.account.settings.service.MaintainCardService;
 import com.sgcc.comm.model.Query;
+import com.sgcc.comm.util.service.CommService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +25,8 @@ public class MaintainCardController {
 
     @Autowired
     MaintainCardService maintainCardService;
+    @Autowired
+    CommService commService;
 
     @RequestMapping("/maintainCardInfo")
     public String maintainCardInfo() {
@@ -44,6 +47,7 @@ public class MaintainCardController {
 
     @RequestMapping("/queryList")
     public @ResponseBody List<Map<String,String>> queryList(@RequestBody Map<String, String> param) {
+        param.put("username", commService.getLoginInfo().getLoginUser());
         return maintainCardService.queryList(param);
     }
 

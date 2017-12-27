@@ -4,7 +4,7 @@
     String path = request.getContextPath();
 %>
 <script type="text/javascript" src="<%=path%>/account/statistics/js/statistics.js"></script>
-
+<br>
 <div class="mb_15" style="margin-top:7px;">
     <form id="query_box" class="form-inline row" role="form">
         <div class="form-group col-md-4">

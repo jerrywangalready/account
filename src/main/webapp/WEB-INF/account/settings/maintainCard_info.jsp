@@ -25,7 +25,9 @@
         <div class="card card_color{{value.card_color}}">
             <div class="card_title">
                 {{value.card_name}}
-                <a class="glyphicon glyphicon-cog card_button" href="javascript:void(0)" onclick="maintainCard_info.js.changeCard('{{value.uuid}}')" ></a></div>
+
+                <a class="glyphicon glyphicon-cog card_button {{if value.card_owner != '1'}}hidden{{/if}}" href="javascript:void(0)" onclick="maintainCard_info.js.changeCard('{{value.uuid}}')" ></a></div>
+
             <div class="card_balance">￥{{value.balance}}</div>
             <div class="card_owner">卡主 : {{value.card_manager}}</div>
         </div>

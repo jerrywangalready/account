@@ -5,6 +5,7 @@ import com.github.pagehelper.PageHelper;
 import com.sgcc.account.settings.dao.MaintainCardDao;
 import com.sgcc.comm.model.Query;
 import com.sgcc.comm.util.CommUtil;
+import com.sgcc.comm.util.service.CommService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ public class MaintainCardServiceImpl implements MaintainCardService {
 
     @Autowired
     MaintainCardDao maintainCardDao;
+
 
     @Override
     public List<Map<String,String>> queryList(Map<String, String> param) {
