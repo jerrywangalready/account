@@ -7,9 +7,13 @@ $(function () {
 maintainCard_info.js = {};
 
 maintainCard_info.js.init = function () {
-
     //初始化列表数据
     maintainCard_info.js.query();
+
+    var login = comm.js.username;
+    if(login == "superadmin"){
+        $("#addButton").show();
+    }
 
 };
 
@@ -18,6 +22,7 @@ maintainCard_info.js.query = function(){
     var collector = $("#query_box").collector();
     $.ajax({
         type:'POST',
+        async: false,
         url:path+"/maintainCard/queryList.do",
         contentType:'application/json',
         data:JSON.stringify(collector),

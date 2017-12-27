@@ -30,7 +30,7 @@
             <div class="card_owner">卡主 : {{value.card_manager}}</div>
         </div>
     {{/each}}
-    <div class="card card_add_button" onclick="maintainCard_info.js.addCard()">
+    <div id="addButton" class="card card_add_button" style="display: none" onclick="maintainCard_info.js.addCard()">
         <a class="glyphicon glyphicon-plus add_button" href="javascript:void(0)" ></a>
     </div>
 </script>
