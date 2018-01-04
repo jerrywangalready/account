@@ -81,9 +81,9 @@ public class MaintainCardController {
 
         // 给卡主分配权限
         // 如果有卡主,加入角色表
-        if (!param.get("cardManager").isEmpty()) {
+        /*if (!param.get("cardManager").isEmpty()) {
             maintainCardService.grantRole(param);
-        }
+        }*/
 
         return maintainCardService.save(param);
     }

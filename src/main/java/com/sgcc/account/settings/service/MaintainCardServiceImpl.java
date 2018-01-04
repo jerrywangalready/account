@@ -44,6 +44,12 @@ public class MaintainCardServiceImpl implements MaintainCardService {
                 maintainCardDao.upd(param);
             }
 
+            // 删除该卡原卡主权限
+            maintainCardDao.deleteRole(param);
+            // 插入新卡主权限
+            param.put("pid", CommUtil.getUUID());
+            maintainCardDao.addRole(param);
+
             return param.get("uuid");
         } catch (Exception e) {
             e.printStackTrace();
@@ -73,6 +79,7 @@ public class MaintainCardServiceImpl implements MaintainCardService {
         try{
             String uuid = param.get("uuid");
             maintainCardDao.deleteCardInfo(uuid);
+            maintainCardDao.deleteRole(param);
         }catch (Exception e){
             e.printStackTrace();
             return "false";
