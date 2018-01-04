@@ -67,15 +67,15 @@ maintainCard_detail.js.queryGrid = function () {
 };
 
 maintainCard_detail.js.forUpdate = function () {
-    if(maintainCard_detail.js.role != "card_owner"){
+   // if(maintainCard_detail.js.role != "card_owner"){
         $(".card_title_span").hide();
         $("#cardManagerNameDiv").hide();
         $("#cardName").show().focus();
         $("#cardManagerSelectDiv").show();
         $("#saveButton").show();
-    }else {
+   // }else {
         $(".glyphicon-remove").show();
-    }
+   // }
 };
 maintainCard_detail.js.forDeleteCard = function (uuid) {
     layer.confirm("确认删除此张饭卡?", function (index) {
