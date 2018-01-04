@@ -11,7 +11,12 @@
             u.nickname card_manager,
             ifnull(b.balance, 0) balance,
             t.card_color,
+            <if test="username == 'superadmin'">
+            '1' card_owner
+            </if>
+            <if test="username != 'superadmin'">
             case t.card_manager when #{username} then '1' ELSE '0' end card_owner
+            </if>
           FROM card_info t
           LEFT JOIN s_users u ON t.card_manager = u.username AND u.isenable = '1'
           LEFT JOIN (SELECT a.card_id,sum(a.balance) balance

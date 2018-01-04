@@ -22,6 +22,7 @@
         <div>
             <label for="rechargeMoney">充值金额</label>
             <input type="text" class="form-control" id="rechargeMoney" name="rechargeMoney" validate="required,recharge.js.validateMoney(this)">
+            <input type="text" class="hidden">
         </div>
         <br>
         <div>
