@@ -22,6 +22,8 @@
 <link rel="stylesheet" type="text/css" href="<%=path%>/comm/plugins/jquery-css3-shake/css/shake.css" />
 <link rel="stylesheet" type="text/css" href="<%=path%>/comm/plugins/jquery-ui-1.12.1.custom/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="<%=path%>/comm/plugins/bootstrap-select/dist/css/bootstrap-select.css">
+<link rel="stylesheet" type="text/css" href="<%=path %>/comm/plugins/mmgrid/src/mmGrid.css">
+<link rel="stylesheet" type="text/css" href="<%=path %>/comm/plugins/mmgrid/src/mmPaginator.css">
 <script type="text/javascript" src="<%=path%>/comm/plugins/jQuery/jquery-3.1.1.min.js"></script>
 <!--[if lt IE 9]>
 <link rel="stylesheet" href="<%=path%>/account/index/css/IE.css"/>
@@ -54,7 +56,7 @@
 <script type="text/javascript" src="<%=path%>/comm/plugins/collector/collector.js"></script>
 <script type="text/javascript" src="<%=path%>/comm/plugins/query/query.js"></script>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript">
     var path = '<%=path%>';
     <%if(userToken!=null){%>
