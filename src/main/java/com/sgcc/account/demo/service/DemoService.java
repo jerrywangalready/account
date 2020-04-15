@@ -6,5 +6,5 @@ import java.util.Map;
 
 public interface DemoService {
 	Query queryDemoList(Map<String, String> param);
-
+	// yge
 }
