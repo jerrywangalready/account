@@ -2,6 +2,8 @@ package com.sgcc.account.demo.controller;
 
 import com.sgcc.comm.model.Query;
 import com.sgcc.account.demo.service.DemoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +16,9 @@ import java.util.Map;
 @Controller
 @RequestMapping("/demo")
 public class DemoController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(DemoController.class);
+
     @Autowired
     DemoService demoService;
 
@@ -35,5 +40,5 @@ public class DemoController {
         return demoService.queryDemoList(param);
     }
 
-    //zengixng ceshi 
+    //zengpiaoliang
 }

@@ -14,7 +14,7 @@
                 <form id="query_box" class="form-inline row" role="form">
                     <div class="form-group col-md-4">
                         <div class="input-group date form_date" data-date="" data-date-format="yyyy-mm-dd"
-                             data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                             data-link-field="dtp_input" data-link-format="yyyy-mm-dd">
                             <input class="form-control" size="16" id="startTime" name="startTime" readonly
                                    placeholder="开始时间">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <div class="input-group date form_date" data-date="" data-date-format="yyyy-mm-dd"
-                             data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                             data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
                             <input class="form-control" size="16" id="finishTime" name="finishTime" readonly
                                    placeholder="结束时间">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
